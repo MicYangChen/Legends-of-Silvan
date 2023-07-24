@@ -10,12 +10,36 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     
     public float walkSpeed = 5f;
+    public float runSpeed = 10f;
 
     Vector2 moveInput;
 
+    public float CurrentMoveSpeed
+    {
+        get
+        {
+            if(IsMoving)
+            {
+                if(IsRunning)
+                {
+                    return runSpeed;
+                }
+                else
+                {
+                    return walkSpeed;
+                }
+            }
+            else
+            {
+                // Idle
+                return 0;
+            }
+        }
+    }
+
     [SerializeField] private bool _isMoving = false;
 
-    public bool isMoving
+    public bool IsMoving
     {
         get
         {
@@ -65,14 +89,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-        isMoving = moveInput != Vector2.zero;
+        IsMoving = moveInput != Vector2.zero;
     }
 
     public void OnRun(InputAction.CallbackContext context)
