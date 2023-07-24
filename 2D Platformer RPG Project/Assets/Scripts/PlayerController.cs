@@ -13,8 +13,9 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
 
     public bool isMoving { get; private set; }
-
-    private void Awake() // Awake happens before Start()
+    
+    // Awake happens before Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
