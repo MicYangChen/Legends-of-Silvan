@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isMoving = value;
-            animator.SetBool("isMoving", value);
+            animator.SetBool(AnimationStrings.isMoving, value);
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isRunning = value;
-            animator.SetBool("isRunning", value);
+            animator.SetBool(AnimationStrings.isRunning, value);
         }
 
     }
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             // Flip, if the value is new
             if(_isFacingRight != value)
             {
-                // Flip the local scale to make the player face the opposite direction
+                // Flip the local scale to make the player face the opposite direction. Scale also makes child objects flip
                 transform.localScale *= new Vector2(-1, 1);
             }
             _isFacingRight = value;
