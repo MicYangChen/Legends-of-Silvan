@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
+    public float airWalkSpeed = 6f;
+    public float airRunSpeed = 12;
     public float jumpImpulse = 8f;
 
     Vector2 moveInput;
@@ -21,15 +23,30 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if(IsMoving && !touchingDirections.IsOnWall)
+            if (IsMoving && !touchingDirections.IsOnWall)
             {
-                if(IsRunning)
+                if (touchingDirections.IsGrounded)
                 {
-                    return runSpeed;
+                    if (IsRunning)
+                    {
+                        return runSpeed;
+                    }
+                    else
+                    {
+                        return walkSpeed;
+                    }
                 }
                 else
                 {
-                    return walkSpeed;
+                    // Air
+                    if (IsRunning)
+                    {
+                        return airRunSpeed;
+                    }
+                    else
+                    {
+                        return airWalkSpeed;
+                    }
                 }
             }
             else
