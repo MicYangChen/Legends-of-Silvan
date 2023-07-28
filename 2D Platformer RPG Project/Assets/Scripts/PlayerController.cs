@@ -23,36 +23,44 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (IsMoving && !touchingDirections.IsOnWall)
+            if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        // Air
+                        if (IsRunning)
+                        {
+                            return airRunSpeed;
+                        }
+                        else
+                        {
+                            return airWalkSpeed;
+                        }
                     }
                 }
                 else
                 {
-                    // Air
-                    if (IsRunning)
-                    {
-                        return airRunSpeed;
-                    }
-                    else
-                    {
-                        return airWalkSpeed;
-                    }
+                    // Idle
+                    return 0;
                 }
             }
             else
             {
-                // Idle
-                return 0;
+                // Movement locked
+                return 0; 
             }
         }
     }
@@ -85,7 +93,14 @@ public class PlayerController : MonoBehaviour
             _isRunning = value;
             animator.SetBool(AnimationStrings.isRunning, value);
         }
+    }
 
+    public bool CanMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
     }
 
     // Awake happens before Start()
@@ -94,18 +109,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -170,7 +173,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         // To Do: Check if alive as well
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanMove)
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
