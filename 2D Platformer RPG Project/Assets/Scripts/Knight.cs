@@ -17,7 +17,7 @@ public class Knight : MonoBehaviour
     }
 
     private WalkableDirection _walkDirection;
-    private Vector2 walkDirectionVector;
+    private Vector2 walkDirectionVector = Vector2.right;
 
     public WalkableDirection WalkDirection
     {
