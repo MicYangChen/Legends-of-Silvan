@@ -84,9 +84,10 @@ GameObject:
   - component: {fileID: 1202005297663393249}
   - component: {fileID: 787720100502855005}
   - component: {fileID: 1542237888363855834}
+  - component: {fileID: 7185267085890474587}
   - component: {fileID: 485017167363391472}
   - component: {fileID: 2184935983089623654}
-  - component: {fileID: 7185267085890474587}
+  - component: {fileID: 5655223143368998666}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -199,6 +200,26 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0980345, y: 0.00038599968}
   m_Size: {x: 0.84812903, y: 2.2963557}
   m_Direction: 0
+--- !u!95 &7185267085890474587
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848862704535749659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d59428a650a6e14dac09dd6a67bc068, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &485017167363391472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackZone: {fileID: 5887954708190261776}
   walkSpeed: 3
+  walkStopRate: 0.05
   _hasTarget: 0
 --- !u!114 &2184935983089623654
 MonoBehaviour:
@@ -246,23 +268,16 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
---- !u!95 &7185267085890474587
-Animator:
-  serializedVersion: 4
+--- !u!114 &5655223143368998666
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848862704535749659}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d59428a650a6e14dac09dd6a67bc068, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aea2b0bb25904242ad8e33a7ada9a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
