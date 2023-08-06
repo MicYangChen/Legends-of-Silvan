@@ -125,6 +125,10 @@ public class PlayerController : MonoBehaviour
         {
             return animator.GetBool(AnimationStrings.lockVelocity);
         }
+        set
+        {
+            animator.SetBool(AnimationStrings.lockVelocity, value);
+        }
     }
 
     private void FixedUpdate()
@@ -215,6 +219,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int damage, Vector2 knockback)
     {
+        LockVelocity = true;
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }

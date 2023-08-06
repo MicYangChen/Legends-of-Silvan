@@ -2296,6 +2296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3616624875232905521, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3787402140742660671, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2361,7 +2365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080813367526392278, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.39
+      value: -4.46
       objectReference: {fileID: 0}
     - target: {fileID: 8080813367526392278, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_LocalPosition.y

@@ -354,7 +354,7 @@ MonoBehaviour:
   isInvincible: 0
   _maxHealth: 100
   _health: 100
-  invincibilityTime: 0.25
+  invincibilityTime: 0.5
   damageableHit:
     m_PersistentCalls:
       m_Calls:

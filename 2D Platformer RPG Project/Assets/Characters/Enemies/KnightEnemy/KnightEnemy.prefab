@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
+  knockback: {x: 5, y: 2}
 --- !u!1 &5454023877989732306
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,3 +370,6 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 100
   invincibilityTime: 0.25
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
