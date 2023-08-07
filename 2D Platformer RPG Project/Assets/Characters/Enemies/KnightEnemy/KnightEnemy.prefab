@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707347174927165056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,17 +58,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.185706, y: 0.9501482}
-      - {x: 2.4111118, y: 1.3914142}
-      - {x: 1.9949834, y: 1.2735595}
-      - {x: 1.0842967, y: 0.91962314}
-      - {x: 0.9388974, y: 0.9073182}
-      - {x: 0.93090177, y: 0.7722963}
-      - {x: 0.95509505, y: 0.6447336}
-      - {x: 0.916574, y: 0.25562987}
-      - {x: 1.0760539, y: -0.30933774}
-      - {x: 3.448899, y: -0.9489386}
-      - {x: 3.6126728, y: 0.13679487}
+    - - {x: 0.4940821, y: 0.8377825}
+      - {x: 0.018374443, y: 1.3640609}
+      - {x: -0.5402651, y: 1.4094104}
+      - {x: -1.082367, y: 1.4355252}
+      - {x: -1.8310878, y: 1.0276003}
+      - {x: -1.4006088, y: 0.7993409}
+      - {x: -0.8687184, y: 0.32239133}
+      - {x: -0.7725402, y: -0.18309176}
+      - {x: -1.1889815, y: -0.57219553}
+      - {x: 0.51817155, y: -1.0291857}
+      - {x: 0.74946904, y: -0.82296515}
+      - {x: 0.8232615, y: 0.1907835}
   m_UseDelaunayMesh: 0
 --- !u!114 &2337459001087451718
 MonoBehaviour:
@@ -83,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 5, y: 2}
+  knockback: {x: 3, y: 2}
 --- !u!1 &5454023877989732306
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,4 +373,16 @@ MonoBehaviour:
   invincibilityTime: 0.25
   damageableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 485017167363391472}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

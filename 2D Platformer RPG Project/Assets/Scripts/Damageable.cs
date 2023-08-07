@@ -28,6 +28,19 @@ public class Damageable : MonoBehaviour
         }
     }
 
+    // Velocity should not be changed while LockVelocity is true, but needs to be respected by other physics components like PlayerController
+    public bool LockVelocity
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.lockVelocity);
+        }
+        set
+        {
+            animator.SetBool(AnimationStrings.lockVelocity, value);
+        }
+    }
+
     public int MaxHealth
     {
         get
@@ -57,25 +70,6 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        if(isInvincible)
-        {
-            if(timeSinceHit > invincibilityTime)
-            {
-                isInvincible = false;
-                timeSinceHit = 0;
-            }
-
-            timeSinceHit += Time.deltaTime;
-        }
-    }
-
     public UnityEvent<int, Vector2> damageableHit;
 
     public bool Hit(int damage, Vector2 knockback)
@@ -87,11 +81,31 @@ public class Damageable : MonoBehaviour
 
             // Notify other components that the damageable was hit to handle the knockback etc.
             animator.SetTrigger(AnimationStrings.hitTrigger);
+            LockVelocity = true;
             damageableHit?.Invoke(damage, knockback);
 
             return true;
         }
 
         return false;
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (isInvincible)
+        {
+            if (timeSinceHit > invincibilityTime)
+            {
+                isInvincible = false;
+                timeSinceHit = 0;
+            }
+
+            timeSinceHit += Time.deltaTime;
+        }
     }
 }
