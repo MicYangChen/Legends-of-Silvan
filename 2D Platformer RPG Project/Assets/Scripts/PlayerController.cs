@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
                     return 0;
                 }
             }
+            else if (IsAttacking && !CanMove)
+            {
+                return walkSpeed / 2.5f;
+            }
             else
             {
                 // Movement locked
@@ -93,6 +97,14 @@ public class PlayerController : MonoBehaviour
         {
             _isRunning = value;
             animator.SetBool(AnimationStrings.isRunning, value);
+        }
+    }
+
+    public bool IsAttacking
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.isAttacking);
         }
     }
 
