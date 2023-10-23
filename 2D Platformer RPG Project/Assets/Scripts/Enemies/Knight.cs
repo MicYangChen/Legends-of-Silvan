@@ -13,7 +13,8 @@ public class Knight : MonoBehaviour
     
     public DetectionZone attackZone;
     public DetectionZone groundDetectionZone;
-    public float walkSpeed = 3f;
+    public float walkAcceleration = 30f;
+    public float maxSpeed = 3f;
     public float walkStopRate = 0.05f;
 
     public enum WalkableDirection
@@ -135,7 +136,8 @@ public class Knight : MonoBehaviour
         {
             if (CanMove)
             {
-                rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y);
+                rb.velocity = new Vector2(
+                    Mathf.Clamp(rb.velocity.x + (walkAcceleration * walkDirectionVector.x), -maxSpeed, maxSpeed), rb.velocity.y);
             }
             else
             {
