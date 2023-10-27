@@ -356,6 +356,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7fe344c2-5443-40ea-bcda-ea1e0adc12b5
     m_ActionName: Player/RangedAttack[/Keyboard/f,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e6f85a33-98f6-4f14-b189-cd6a8cecac04
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
