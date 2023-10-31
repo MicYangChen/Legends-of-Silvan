@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5908056824308242585
 SpriteRenderer:
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthRestore: 100
   spinRotationSpeed: {x: 0, y: 180, z: 0}
+  pickUpSound: {fileID: 8300000, guid: 4e20b6c137dfb264f916633b8139a610, type: 3}
+  volume: 4
 --- !u!61 &6573673510959002175
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6533154389288142637}
   - component: {fileID: 6618213782460227623}
-  - component: {fileID: 5037523191150511074}
   - component: {fileID: -2165777846119391285}
+  - component: {fileID: 5037523191150511074}
   m_Layer: 0
   m_Name: 50HPHealthPickUp
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6618213782460227623
 SpriteRenderer:
@@ -86,6 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2165777846119391285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886296783575761801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33961a6c200aae0428b525895fd8f758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthRestore: 50
+  spinRotationSpeed: {x: 0, y: 180, z: 0}
+  pickUpSound: {fileID: 8300000, guid: 4e20b6c137dfb264f916633b8139a610, type: 3}
+  volume: 3
 --- !u!60 &5037523191150511074
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -121,17 +137,3 @@ PolygonCollider2D:
       - {x: 0.4914303, y: -0.12957942}
       - {x: 0.022163436, y: 0.3486017}
   m_UseDelaunayMesh: 0
---- !u!114 &-2165777846119391285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6886296783575761801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33961a6c200aae0428b525895fd8f758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthRestore: 50
-  spinRotationSpeed: {x: 0, y: 180, z: 0}

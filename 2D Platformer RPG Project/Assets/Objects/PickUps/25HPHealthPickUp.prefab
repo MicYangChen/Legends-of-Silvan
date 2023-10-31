@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5763090235904837974}
   - component: {fileID: 40645170506087901}
-  - component: {fileID: 5596391912216505412}
   - component: {fileID: 3326371174108803997}
+  - component: {fileID: 5596391912216505412}
   m_Layer: 0
   m_Name: 25HPHealthPickUp
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &40645170506087901
 SpriteRenderer:
@@ -86,6 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3326371174108803997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051580760346296169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33961a6c200aae0428b525895fd8f758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthRestore: 25
+  spinRotationSpeed: {x: 0, y: 180, z: 0}
+  pickUpSound: {fileID: 8300000, guid: 4e20b6c137dfb264f916633b8139a610, type: 3}
+  volume: 2
 --- !u!58 &5596391912216505412
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102,17 +118,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.024280846}
   serializedVersion: 2
   m_Radius: 0.41858768
---- !u!114 &3326371174108803997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6051580760346296169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33961a6c200aae0428b525895fd8f758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthRestore: 25
-  spinRotationSpeed: {x: 0, y: 180, z: 0}
