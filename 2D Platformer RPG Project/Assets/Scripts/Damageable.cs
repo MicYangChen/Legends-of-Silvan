@@ -14,6 +14,9 @@ public class Damageable : MonoBehaviour
     private float timeSinceHit = 0;
     public float invincibilityTime = 1f;
 
+    public UnityEvent<int, Vector2> damageableHit;
+    public UnityEvent<int, int> healthChanged;
+
     private bool IsAlive
     {
         get
@@ -62,6 +65,7 @@ public class Damageable : MonoBehaviour
         set
         {
             _health = value;
+            healthChanged?.Invoke(_health, MaxHealth);
 
             if(_health <= 0)
             {
@@ -69,8 +73,6 @@ public class Damageable : MonoBehaviour
             }
         }
     }
-
-    public UnityEvent<int, Vector2> damageableHit;
 
     public bool Hit(int damage, Vector2 knockback)
     {
