@@ -9,14 +9,7 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     private bool menuActivated = false;
-
-    public Canvas inventoryCanvas;
-
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        inventoryCanvas = FindObjectOfType<Canvas>();
-    }
+    public ItemSlot[] itemSlot;
 
     public void OnInventoryOpen(InputAction.CallbackContext context)
     {
@@ -38,6 +31,13 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        Debug.Log("Item Name = " + itemName + ", Quantity = " + quantity + ", Item Sprite = " + itemSprite);
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i].isFull == false)
+            {
+                itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                return;
+            }
+        }
     }
 }
