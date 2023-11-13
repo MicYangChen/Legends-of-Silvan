@@ -153,6 +153,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e6f85a33-98f6-4f14-b189-cd6a8cecac04
     m_ActionName: UI/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1946e43-eda7-4786-8a7a-c9c217656f78
+    m_ActionName: UI/Inventory[/Keyboard/i,/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
