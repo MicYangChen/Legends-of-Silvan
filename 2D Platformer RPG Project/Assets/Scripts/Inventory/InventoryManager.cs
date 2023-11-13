@@ -18,14 +18,6 @@ public class InventoryManager : MonoBehaviour
         inventoryCanvas = FindObjectOfType<Canvas>();
     }
 
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnInventoryOpen(InputAction.CallbackContext context)
     {
         if (context.started && menuActivated)
@@ -33,14 +25,19 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             menuActivated = false;
-            Debug.Log("working??");
+            Debug.Log("Inventory Closed!");
         }
         else if (context.started && !menuActivated)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             menuActivated = true;
-            Debug.Log("working??");
+            Debug.Log("Inventory Opened!");
         }
+    }
+
+    public void AddItem(string itemName, int quantity, Sprite itemSprite)
+    {
+        Debug.Log("Item Name = " + itemName + ", Quantity = " + quantity + ", Item Sprite = " + itemSprite);
     }
 }
