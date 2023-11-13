@@ -13,10 +13,6 @@ public class HealthBar : MonoBehaviour
     private void Awake()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null)
-        {
-            Debug.Log("No 'Player' found in the scene.");
-        }
         playerDamageable = player.GetComponent<Damageable>();
     }
 
