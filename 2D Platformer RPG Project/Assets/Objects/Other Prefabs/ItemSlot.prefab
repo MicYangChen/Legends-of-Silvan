@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931bb3fd11bf6414c88a46a09c19d626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedShader: {fileID: 5641301920739701760}
+  thisItemSelected: 0
   itemName: 
   quantity: 0
   itemSprite: {fileID: 0}
