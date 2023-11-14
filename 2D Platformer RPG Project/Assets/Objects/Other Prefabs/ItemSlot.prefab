@@ -96,10 +96,15 @@ MonoBehaviour:
   thisItemSelected: 0
   itemName: 
   quantity: 0
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: b670c7a494e6d6a4f929b77bd6512133, type: 3}
   isFull: 0
+  itemDescription: 
+  emptySprite: {fileID: 0}
   quantityText: {fileID: 6098272122185647970}
   itemImage: {fileID: 7746241899715733389}
+  ItemDescriptionImage: {fileID: 0}
+  ItemDescriptionNameText: {fileID: 0}
+  ItemDescriptionText: {fileID: 0}
 --- !u!1 &1855194273291538414
 GameObject:
   m_ObjectHideFlags: 0
