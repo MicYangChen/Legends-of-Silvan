@@ -24,4 +24,9 @@ public class Attack : MonoBehaviour
             }
         }
     }
+
+    public void ChangeAttackDamage(int amount)
+    {
+        attackDamage += amount;
+    }
 }
