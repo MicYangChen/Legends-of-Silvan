@@ -13,11 +13,20 @@ public class ItemSO : ScriptableObject
     public AttributeToChange attributeToChange = new AttributeToChange();
     public int amountToChangeAttribute;
 
-    public void UseItem()
+    public bool UseItem()
     {
         if (statToChange == StatToChange.health)
         {
-            GameObject.Find("Player").GetComponent<Damageable>().Heal(amountToChangeStat);
+            Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
+            if (playerHP.Health == playerHP.MaxHealth)
+            {
+                return false;
+            }
+            else
+            {
+                playerHP.Heal(amountToChangeStat);
+                return true;
+            }
         }
         if (statToChange == StatToChange.attack_power)
         {
@@ -26,7 +35,9 @@ public class ItemSO : ScriptableObject
             {
                 attackComponent.ChangeAttackDamage(amountToChangeStat);
             }
+            return true;
         }
+        return false;
     }
 
     public enum StatToChange

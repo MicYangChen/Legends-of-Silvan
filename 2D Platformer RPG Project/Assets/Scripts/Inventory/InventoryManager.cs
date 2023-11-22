@@ -47,15 +47,17 @@ public class InventoryManager : MonoBehaviour
         return quantity;
     }
 
-    public void UseItem(string itemName)
+    public bool UseItem(string itemName)
     {
         for (int i = 0; i < itemSOs.Length; i++)
         {
             if (itemSOs[i].itemName == itemName)
             {
-                itemSOs[i].UseItem();
+                bool useable = itemSOs[i].UseItem();
+                return useable;
             }
         }
+        return false;
     }
 
     public void DeselectAllSlots()
