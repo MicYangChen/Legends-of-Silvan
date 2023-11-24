@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
+// EquipmentSlot communicates with InventoryManager and EquippedSlot
 public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 {
     private InventoryManager inventoryManager;
@@ -23,8 +24,10 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     public ItemType itemType;
 
     // ITEM SLOT
-    [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
+
+    // EQUIPPED SLOTS
+    [SerializeField] private EquippedSlot helmetSlot, armorSlot, glovesSlot, bootsSlot, weaponSlot, accessorySlot, artifactSlot;
 
     private void Start()
     {
@@ -72,16 +75,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     {
         if (thisItemSelected)
         {
-            bool useable = inventoryManager.UseItem(itemName);
-            if (useable)
-            {
-                this.quantity -= 1;
-                quantityText.text = this.quantity.ToString();
-                if (this.quantity <= 0)
-                {
-                    EmptySlot();
-                }
-            }
+            EquipGear();
         }
         else
         {
@@ -91,9 +85,51 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    private void EquipGear()
+    {
+        switch (itemType)
+        {
+            case ItemType.helmet:
+                {
+                    helmetSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.armor:
+                {
+                    armorSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.gloves:
+                {
+                    glovesSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.boots:
+                {
+                    bootsSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.weapon:
+                {
+                    weaponSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.accessory:
+                {
+                    accessorySlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.artifact:
+                {
+                    artifactSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+        }
+        EmptySlot();
+    }
+
     private void EmptySlot()
     {
-        quantityText.enabled = false;
         itemImage.sprite = emptySprite;
     }
 
@@ -120,7 +156,6 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 
         // Remove the item
         this.quantity -= 1;
-        quantityText.text = this.quantity.ToString();
         if (this.quantity <= 0)
         {
             EmptySlot();
