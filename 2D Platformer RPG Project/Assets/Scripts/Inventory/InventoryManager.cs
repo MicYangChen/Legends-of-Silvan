@@ -8,24 +8,42 @@ using static UnityEngine.Rendering.DebugUI;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
-    private bool menuActivated = false;
+    public GameObject EquipmentMenu;
     public ItemSlot[] itemSlot;
     public ItemSO[] itemSOs;
 
     public void OnInventoryOpen(InputAction.CallbackContext context)
     {
-        if (context.started && menuActivated)
+        if (context.started && InventoryMenu.activeSelf)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
-            menuActivated = false;
+            EquipmentMenu.SetActive(false);
             Debug.Log("Inventory Closed!");
         }
-        else if (context.started && !menuActivated)
+        else if (context.started && !InventoryMenu.activeSelf)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
-            menuActivated = true;
+            EquipmentMenu.SetActive(false);
+            Debug.Log("Inventory Opened!");
+        }
+    }
+
+    public void OnEquipmentOpen(InputAction.CallbackContext context)
+    {
+        if (context.started && EquipmentMenu.activeSelf)
+        {
+            Time.timeScale = 1;
+            InventoryMenu.SetActive(false);
+            EquipmentMenu.SetActive(false);
+            Debug.Log("Inventory Closed!");
+        }
+        else if (context.started && !EquipmentMenu.activeSelf)
+        {
+            Time.timeScale = 0;
+            InventoryMenu.SetActive(false);
+            EquipmentMenu.SetActive(true);
             Debug.Log("Inventory Opened!");
         }
     }
