@@ -9,7 +9,10 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
+
     public ItemSlot[] itemSlot;
+    public EquipmentSlot[] equipmentSlot;
+
     public ItemSO[] itemSOs;
 
     public void OnInventoryOpen(InputAction.CallbackContext context)
@@ -48,21 +51,40 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, ItemType itemType)
     {
-        for (int i = 0; i < itemSlot.Length; i++)
+        if (itemType == ItemType.consumable || itemType == ItemType.collectible)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            for (int i = 0; i < itemSlot.Length; i++)
             {
-                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
-                if (leftOverItems > 0)
+                if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
                 {
-                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription);
+                    int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, itemType);
+                    if (leftOverItems > 0)
+                    {
+                        leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, itemType);
+                    }
+                    return leftOverItems;
                 }
-                return leftOverItems;
             }
+            return quantity;
         }
-        return quantity;
+        else
+        {
+            for (int i = 0; i < equipmentSlot.Length; i++)
+            {
+                if (equipmentSlot[i].isFull == false && equipmentSlot[i].itemName == itemName || equipmentSlot[i].quantity == 0)
+                {
+                    int leftOverItems = equipmentSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, itemType);
+                    if (leftOverItems > 0)
+                    {
+                        leftOverItems = AddItem(itemName, leftOverItems, itemSprite, itemDescription, itemType);
+                    }
+                    return leftOverItems;
+                }
+            }
+            return quantity;
+        }
     }
 
     public bool UseItem(string itemName)
@@ -87,3 +109,18 @@ public class InventoryManager : MonoBehaviour
         }
     }
 }
+
+// Item type to know if item goes to equipment inventory or normal inventory and know what equipment slot an equipment belongs to.
+public enum ItemType
+{
+    consumable,
+    collectible,
+    helmet,
+    armor,
+    gloves,
+    boots,
+    weapon,
+    accessory,
+    artifact,
+    none,
+};

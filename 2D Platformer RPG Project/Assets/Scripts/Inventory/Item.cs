@@ -11,6 +11,8 @@ public class Item : MonoBehaviour
 
     private InventoryManager inventoryManager;
 
+    public ItemType itemType;
+
     void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
@@ -20,7 +22,7 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, itemType);
             if (leftOverItems <= 0)
             {
                 Destroy(gameObject);

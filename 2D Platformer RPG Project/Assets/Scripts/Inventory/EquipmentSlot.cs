@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler
+public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 {
     private InventoryManager inventoryManager;
 
@@ -21,16 +21,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
     public Sprite emptySprite;
     public ItemType itemType;
-    [SerializeField] private int maxNumberOfItems;
 
     // ITEM SLOT
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
-
-    // ITEM DESCRIPTION SLOT
-    public Image ItemDescriptionImage;
-    public TMP_Text ItemDescriptionNameText;
-    public TMP_Text ItemDescriptionText;
 
     private void Start()
     {
@@ -47,37 +41,23 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         // Update Item Type
         this.itemType = itemType;
-        
+
         // Update Name, Image & Description
         this.itemName = itemName;
         this.itemSprite = itemSprite;
         itemImage.sprite = itemSprite;
         this.itemDescription = itemDescription;
-        
+
         // Update Quantity
-        this.quantity += quantity;
-        if (this.quantity >= maxNumberOfItems)
-        {
-            quantityText.text = maxNumberOfItems.ToString();
-            quantityText.enabled = true;
-            isFull = true;
-
-            // Return the LeftOvers
-            int extraItems = this.quantity - maxNumberOfItems;
-            this.quantity = maxNumberOfItems;
-            return extraItems;
-        }
-
-        // Update Quantity Text
-        quantityText.text = this.quantity.ToString();
-        quantityText.enabled = true;
+        this.quantity = 1;
+        isFull = true;
 
         return 0;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left) 
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             OnLeftClick();
         }
@@ -108,13 +88,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             thisItemSelected = true;
-            ItemDescriptionNameText.text = itemName;
-            ItemDescriptionText.text = itemDescription;
-            ItemDescriptionImage.sprite = itemSprite;
-            if (ItemDescriptionImage == null)
-            {
-                ItemDescriptionImage.sprite = emptySprite;
-            }
         }
     }
 
@@ -122,9 +95,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         quantityText.enabled = false;
         itemImage.sprite = emptySprite;
-        ItemDescriptionNameText.text = "";
-        ItemDescriptionText.text = "";
-        ItemDescriptionImage.sprite = emptySprite;
     }
 
     public void OnRightClick()
