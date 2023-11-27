@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84fb13dd35b6434087d5d4c04dd42b5, type: 3}
   m_Name: Chestplate
   m_EditorClassIdentifier: 
-  itemName: 
-  strength: 0
-  defense: 0
+  itemName: Chestplate
+  strength: 5
+  defense: 10

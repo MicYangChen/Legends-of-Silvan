@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584252163488298978}
   - component: {fileID: 262634068901750735}
-  - component: {fileID: 2337459001087451718}
+  - component: {fileID: 6897061603792513566}
   m_Layer: 10
   m_Name: SwordAttack
   m_TagString: Untagged
@@ -71,7 +71,7 @@ PolygonCollider2D:
       - {x: 0.74946904, y: -0.82296515}
       - {x: 0.8232615, y: 0.1907835}
   m_UseDelaunayMesh: 0
---- !u!114 &2337459001087451718
+--- !u!114 &6897061603792513566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707347174927165056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
@@ -389,6 +389,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
