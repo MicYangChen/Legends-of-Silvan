@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Damageable and HealthManager Script work together
 public class Damageable : MonoBehaviour
 {
     Animator animator;

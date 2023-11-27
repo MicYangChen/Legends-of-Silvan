@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int strength, defense;
+    private Damageable playerHP;
 
-    [SerializeField] private TMP_Text strengthText, defenseText;
+    public int health, strength, defense;
+
+    [SerializeField] private TMP_Text healthText, strengthText, defenseText;
 
     void Start()
     {
+        playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         UpdateEquipmentStats();
     }
 
     public void UpdateEquipmentStats()
     {
+        healthText.text = health.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
     }

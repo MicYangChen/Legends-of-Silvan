@@ -1,11 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileFire : MonoBehaviour
 {
+    private PlayerStats playerStats;
     public Transform launchPoint;
     public GameObject projectilePrefab;
+
+    private void Start()
+    {
+        playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+    }
+
+    public int attackPower
+    {
+        get
+        {
+            return playerStats.strength;
+        }
+        set
+        {
+            playerStats.strength = value;
+        }
+    }
 
     public void FireProjectile()
     {

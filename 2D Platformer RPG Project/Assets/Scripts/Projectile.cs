@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private ProjectileFire projectileFire;
+
     public int attackDamage = 10;
     public Vector2 moveSpeed = new Vector2(3f, 0);
     public Vector2 knockback = new Vector2(0, 0);
+    private float randomMultiplier = 1f;
 
     Rigidbody2D rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        projectileFire = GameObject.Find("Player").GetComponentInChildren<ProjectileFire>();
     }
 
     void Start()
@@ -27,11 +31,15 @@ public class Projectile : MonoBehaviour
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
+            
+            randomMultiplier = Random.Range(0.8f, 1.2f);
 
-            bool gotHit = damageable.Hit(attackDamage, deliveredKnockback);
+            int damageDealt = Mathf.RoundToInt(projectileFire.attackPower * randomMultiplier *2.5f); // Bow deals 2.5x of base STR
+
+            bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
             if (gotHit)
             {
-                Debug.Log(collision.name + " hit for " + attackDamage);
+                Debug.Log(collision.name + " hit for " + damageDealt);
                 Destroy(gameObject);
             }
         }

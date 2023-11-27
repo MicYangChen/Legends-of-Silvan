@@ -20399,8 +20399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9390efe9acbae694988552b6ccecfc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   strength: 5
   defense: 5
+  healthText: {fileID: 697013714}
   strengthText: {fileID: 2099533046}
   defenseText: {fileID: 630329215}
 --- !u!4 &1439248228

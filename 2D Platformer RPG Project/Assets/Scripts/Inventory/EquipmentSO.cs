@@ -6,11 +6,12 @@ using UnityEngine;
 public class EquipmentSO : ScriptableObject
 {
     public string itemName;
-    public int strength, defense;
+    public int health, strength, defense;
 
     public void EquipItem()
     {
         PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+        playerstats.health += health;
         playerstats.strength += strength;
         playerstats.defense += defense;
 
@@ -20,6 +21,7 @@ public class EquipmentSO : ScriptableObject
     public void UnEquipItem()
     {
         PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+        playerstats.health -= health;
         playerstats.strength -= strength;
         playerstats.defense -= defense;
 
