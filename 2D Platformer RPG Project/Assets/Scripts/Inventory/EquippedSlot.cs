@@ -110,5 +110,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
                 equipmentSOLibrary.equipmentSO[i].UnEquipItem();
             }
         }
+
+        slotInUse = false;
     }
 }
