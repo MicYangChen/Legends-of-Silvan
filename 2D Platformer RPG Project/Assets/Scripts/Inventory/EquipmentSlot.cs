@@ -131,6 +131,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     private void EmptySlot()
     {
         itemImage.sprite = emptySprite;
+        isFull = false;
     }
 
     public void OnRightClick()
@@ -141,6 +142,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         newItem.itemName = itemName;
         newItem.sprite = itemSprite;
         newItem.itemDescription = itemDescription;
+        newItem.itemType = this.itemType;
 
         // Create and modify the Sprite Renderer
         SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
