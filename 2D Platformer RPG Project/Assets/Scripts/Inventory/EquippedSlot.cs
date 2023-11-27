@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 {
     private InventoryManager inventoryManager;
+    private EquipmentSOLibrary equipmentSOLibrary;
 
     // SLOT APPEARANCE
     [SerializeField] private Image slotImage;
@@ -29,6 +30,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        equipmentSOLibrary = GameObject.Find("InventoryCanvas").GetComponent<EquipmentSOLibrary>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -79,6 +81,15 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         this.itemName = itemName;
         this.itemDescription = itemDescription;
 
+        // Update Player Stats
+        for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
+        {
+            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+            {
+                equipmentSOLibrary.equipmentSO[i].EquipItem();
+            }
+        }
+
         slotInUse = true;
     }
 
@@ -91,6 +102,13 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         this.itemSprite = emptySprite;
         slotImage.sprite = this.emptySprite;
         slotName.enabled = true;
-    }
 
+        for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
+        {
+            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+            {
+                equipmentSOLibrary.equipmentSO[i].UnEquipItem();
+            }
+        }
+    }
 }
