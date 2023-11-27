@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a84fb13dd35b6434087d5d4c04dd42b5, type: 3}
-  m_Name: Chestplate
+  m_Name: Iron Sword
   m_EditorClassIdentifier: 
-  itemName: Chestplate
-  strength: 2
-  defense: 10
+  itemName: Iron Sword
+  strength: 15
+  defense: 0

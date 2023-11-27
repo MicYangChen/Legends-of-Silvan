@@ -13,6 +13,7 @@ public class Attack : MonoBehaviour
 
     // public int attackDamage = 10;
     private int modifiedATT = 0;
+    [SerializeField] private float chainedAttackModifier = 1f;
     private float randomMultiplier = 1f;
     public Vector2 knockback = Vector2.zero;
 
@@ -27,7 +28,7 @@ public class Attack : MonoBehaviour
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
 
             randomMultiplier = Random.Range(0.8f, 1.2f);
-            int damageDealt = Mathf.RoundToInt((Mathf.Max(playerStats.strength, modifiedATT) * randomMultiplier));
+            int damageDealt = Mathf.RoundToInt(Mathf.RoundToInt((Mathf.Max(playerStats.strength, modifiedATT) * chainedAttackModifier) * randomMultiplier));
 
             // Hit the target
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
@@ -40,6 +41,6 @@ public class Attack : MonoBehaviour
 
     public void ChangeAttackDamage(int amount)
     {
-        modifiedATT = playerStats.strength += amount;
+        modifiedATT = playerStats.strength + amount;
     }
 }

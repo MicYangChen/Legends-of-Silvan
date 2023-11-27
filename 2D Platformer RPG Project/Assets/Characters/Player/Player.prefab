@@ -269,46 +269,6 @@ MonoBehaviour:
     m_ActionId: 5dba05e1-4e27-4b84-9fdc-11ff8f932859
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 81299300-f40a-4453-9ec1-51c00436f4f5
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d35e7d18-5d12-4c07-86cf-2007dbcdf5ee
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e789ac5c-70d5-4c9d-94f8-6dd9275235da
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0d2d3ba6-883b-434e-9541-5a0380c3496e
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e174a4b4-35ea-440e-8049-8df3addd0ab3
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 23f7ffc7-b4c0-4934-bbe8-d14b51c825a5
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 843f8ed8-ef4b-4454-909c-6858a8b24caa
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: facf5e56-f261-4132-a8c6-049eb2931b76
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ef59563d-ca66-4d0f-9200-5030a9d57610
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a2d4183f-5689-4a16-9365-45f28811a4ac
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3842269013856942663}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -360,6 +320,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e6f85a33-98f6-4f14-b189-cd6a8cecac04
     m_ActionName: UI/Escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1946e43-eda7-4786-8a7a-c9c217656f78
+    m_ActionName: UI/Inventory[/Keyboard/i,/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1f64cbd4-02e2-4c94-a164-976ec7e0919b
+    m_ActionName: UI/Equipment[/Keyboard/p,/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -397,6 +365,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &423191943982148803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 12
+  chainedAttackModifier: 1.2
   knockback: {x: 1, y: 1}
 --- !u!1 &4686211959131421651
 GameObject:
@@ -613,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 12
+  chainedAttackModifier: 1
   knockback: {x: 1, y: 1}
 --- !u!1 &5216784088714144859
 GameObject:
@@ -699,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 15
+  chainedAttackModifier: 1
   knockback: {x: 1.5, y: 1}
 --- !u!1 &6360153133642227000
 GameObject:
@@ -787,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  chainedAttackModifier: 1
   knockback: {x: 1.5, y: 1}
 --- !u!1 &7451710311560876948
 GameObject:
@@ -874,5 +845,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 18
+  chainedAttackModifier: 1.5
   knockback: {x: 1.5, y: 1}

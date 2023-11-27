@@ -28,13 +28,11 @@ public class ItemSO : ScriptableObject
                 return true;
             }
         }
-        if (statToChange == StatToChange.attack_power)
+        if (statToChange == StatToChange.strength)
         {
-            Attack[] attackComponents = GameObject.Find("Player").GetComponentsInChildren<Attack>();
-            foreach (Attack attackComponent in attackComponents)
-            {
-                attackComponent.ChangeAttackDamage(amountToChangeStat);
-            }
+            PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+            playerstats.strength += amountToChangeStat;
+            playerstats.UpdateEquipmentStats();
             return true;
         }
         return false;
@@ -44,7 +42,7 @@ public class ItemSO : ScriptableObject
     {
         none,
         health,
-        attack_power
+        strength
     };
 
     public enum AttributeToChange
