@@ -8,6 +8,14 @@ public class EquipmentSO : ScriptableObject
     public string itemName;
     public int health, strength, defense;
 
+    [SerializeField] private Sprite itemSprite;
+
+    public void PreviewEquipment()
+    {
+        GameObject.Find("StatManager").GetComponent<PlayerStats>().
+            PreviewEquipmentStats(health, strength, defense, itemSprite);
+    }
+
     public void EquipItem()
     {
         PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();

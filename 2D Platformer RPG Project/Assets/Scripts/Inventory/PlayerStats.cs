@@ -16,6 +16,9 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Image previewImage;
 
+    [SerializeField] private GameObject selectedItemStats;
+    [SerializeField] private GameObject selectedItemImage;
+
     void Start()
     {
         playerHP = GameObject.Find("Player").GetComponent<Damageable>();
@@ -36,5 +39,14 @@ public class PlayerStats : MonoBehaviour
         defensePreText.text = defense.ToString();
 
         previewImage.sprite = itemSprite;
+
+        selectedItemImage.SetActive(true);
+        selectedItemStats.SetActive(true);
+    }
+
+    public void TurnOffPreviewStats()
+    {
+        selectedItemImage.SetActive(false);
+        selectedItemStats.SetActive(false);
     }
 }
