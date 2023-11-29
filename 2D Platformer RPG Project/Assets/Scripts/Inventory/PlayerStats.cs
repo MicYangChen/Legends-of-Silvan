@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PlayerStats : MonoBehaviour
     public int health, strength, defense;
 
     [SerializeField] private TMP_Text healthText, strengthText, defenseText;
+
+    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText;
+
+    [SerializeField] private Image previewImage;
 
     void Start()
     {
@@ -22,5 +27,14 @@ public class PlayerStats : MonoBehaviour
         healthText.text = health.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
+    }
+
+    public void PreviewEquipmentStats(int health, int strength, int defense, Sprite itemSprite)
+    {
+        healthPreText.text = health.ToString();
+        strengthPreText.text = strength.ToString();
+        defensePreText.text = defense.ToString();
+
+        previewImage.sprite = itemSprite;
     }
 }
