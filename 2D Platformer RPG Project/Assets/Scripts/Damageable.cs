@@ -17,6 +17,7 @@ public class Damageable : MonoBehaviour
 
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<int, int> healthChanged;
+    public UnityEvent<int, int> maxHealthChanged;
 
     private bool IsAlive
     {
@@ -54,6 +55,7 @@ public class Damageable : MonoBehaviour
         set
         {
             _maxHealth = value;
+            maxHealthChanged?.Invoke(Health, _maxHealth);
         }
     }
 
@@ -102,6 +104,22 @@ public class Damageable : MonoBehaviour
             int successfulHealthRestore = Mathf.Min(maxHealthRestore, healthRestore);
             Health += successfulHealthRestore;
             CharacterEvents.characterHealed(gameObject, successfulHealthRestore);
+        }
+    }
+
+    public void IncreaseMaxHealth(int increase)
+    {
+        if (IsAlive)
+        {
+            MaxHealth += increase;
+        }
+    }
+
+    public void DecreaseMaxHealth(int decrease)
+    {
+        if (IsAlive)
+        {
+            MaxHealth -= decrease;
         }
     }
 
