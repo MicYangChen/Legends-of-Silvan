@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    private Damageable playerHP;
-
     public int health, strength, defense;
+    public int currentExp, maxExp, currentLevel;
 
     [SerializeField] private TMP_Text healthText, strengthText, defenseText;
 
@@ -21,7 +20,6 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         UpdateEquipmentStats();
     }
 

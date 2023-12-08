@@ -368,6 +368,9 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  maxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &423191943982148803
 MonoBehaviour:
   m_ObjectHideFlags: 0

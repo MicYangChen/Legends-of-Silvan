@@ -392,6 +392,9 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  maxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
