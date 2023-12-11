@@ -28,7 +28,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image itemImage;
 
     // EQUIPPED SLOTS
-    [SerializeField] private EquippedSlot helmetSlot, armorSlot, glovesSlot, bootsSlot, weaponSlot, accessorySlot, artifactSlot;
+    [SerializeField] private EquippedSlot helmetSlot, armorSlot, bootsSlot, subWeaponSlot, weaponSlot, accessorySlot, artifactSlot;
 
     private void Start()
     {
@@ -119,14 +119,14 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                     armorSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
-            case ItemType.gloves:
-                {
-                    glovesSlot.EquipGear(itemSprite, itemName, itemDescription);
-                    break;
-                }
             case ItemType.boots:
                 {
                     bootsSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.subWeapon:
+                {
+                    subWeaponSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
             case ItemType.weapon:
