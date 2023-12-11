@@ -7,14 +7,14 @@ using static ItemSO;
 public class EquipmentSO : ScriptableObject
 {
     public string itemName;
-    public int health, strength, defense;
+    public int health, strength, defense, ranged;
 
     [SerializeField] private Sprite itemSprite;
 
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(health, strength, defense, itemSprite);
+            PreviewEquipmentStats(health, strength, defense, ranged, itemSprite);
     }
 
     public void EquipItem()
@@ -25,6 +25,7 @@ public class EquipmentSO : ScriptableObject
         playerstats.health += health;
         playerstats.strength += strength;
         playerstats.defense += defense;
+        playerstats.ranged += ranged;
 
         playerstats.UpdateEquipmentStats();
     }
@@ -37,6 +38,7 @@ public class EquipmentSO : ScriptableObject
         playerstats.health -= health;
         playerstats.strength -= strength;
         playerstats.defense -= defense;
+        playerstats.ranged -= ranged;
 
         playerstats.UpdateEquipmentStats();
     }

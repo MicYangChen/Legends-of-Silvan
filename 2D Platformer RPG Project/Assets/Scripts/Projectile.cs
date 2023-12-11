@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
 {
     private ProjectileFire projectileFire;
 
-    public int attackDamage = 10;
     public Vector2 moveSpeed = new Vector2(3f, 0);
     public Vector2 knockback = new Vector2(0, 0);
     private float randomMultiplier = 1f;
@@ -32,9 +31,9 @@ public class Projectile : MonoBehaviour
         {
             Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
             
-            randomMultiplier = Random.Range(0.8f, 1.2f);
+            randomMultiplier = Random.Range(0.75f, 1.25f);
 
-            int damageDealt = Mathf.RoundToInt(projectileFire.attackPower * randomMultiplier *2.5f); // Bow deals 2.5x of base STR
+            int damageDealt = Mathf.RoundToInt(projectileFire.AttackPower * randomMultiplier); // Bow deals R.ATT Damage
 
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
             if (gotHit)

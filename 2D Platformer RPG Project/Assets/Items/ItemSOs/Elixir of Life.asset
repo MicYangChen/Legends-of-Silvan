@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3a981d6ca8062542b212d9f4116b2c5, type: 3}
-  m_Name: Waffles
+  m_Name: Elixir of Life
   m_EditorClassIdentifier: 
-  itemName: Waffles
+  itemName: Elixir of Life
   statToChange: 2
-  amountToChangeStat: 10
+  amountToChangeStat: 5
   attributeToChange: 0
   amountToChangeAttribute: 0

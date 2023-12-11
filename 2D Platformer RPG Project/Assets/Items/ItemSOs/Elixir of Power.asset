@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84fb13dd35b6434087d5d4c04dd42b5, type: 3}
-  m_Name: Wooden Bow
+  m_Script: {fileID: 11500000, guid: a3a981d6ca8062542b212d9f4116b2c5, type: 3}
+  m_Name: Elixir of Power
   m_EditorClassIdentifier: 
-  itemName: Wooden Bow
-  health: 0
-  strength: 5
-  defense: 5
-  ranged: 10
-  itemSprite: {fileID: 21300000, guid: 3ff7e74f82309124c810a2ad72f230b7, type: 3}
+  itemName: Elixir of Power
+  statToChange: 3
+  amountToChangeStat: 2
+  attributeToChange: 0
+  amountToChangeAttribute: 0

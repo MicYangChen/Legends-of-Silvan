@@ -152,6 +152,12 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     {
         itemImage.sprite = emptySprite;
         isFull = false;
+        this.quantity = 0;
+
+        itemSprite = emptySprite;
+        itemImage.sprite = emptySprite;
+        itemDescription = "";
+        itemName = "";
     }
 
     public void OnRightClick()

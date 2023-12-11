@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health, strength, defense;
+    public int health, strength, defense, ranged;
     public int currentExp, maxExp, currentLevel;
 
-    [SerializeField] private TMP_Text healthText, strengthText, defenseText;
+    [SerializeField] private TMP_Text healthText, strengthText, defenseText, rangedText;
 
-    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText;
+    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, rangedPreText;
 
     [SerializeField] private Image previewImage;
 
@@ -28,13 +28,16 @@ public class PlayerStats : MonoBehaviour
         healthText.text = health.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
+        rangedText.text = ranged.ToString();
     }
 
-    public void PreviewEquipmentStats(int health, int strength, int defense, Sprite itemSprite)
+    public void PreviewEquipmentStats(int health, int strength, int defense, int ranged, Sprite itemSprite)
     {
         healthPreText.text = health.ToString();
         strengthPreText.text = strength.ToString();
         defensePreText.text = defense.ToString();
+        rangedPreText.text = ranged.ToString();
+
 
         previewImage.sprite = itemSprite;
 

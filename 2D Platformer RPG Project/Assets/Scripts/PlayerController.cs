@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     TouchingDirections touchingDirections;
     Damageable damageable;
+    PlayerStats playerStats;
 
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
@@ -203,9 +205,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && playerStats.ranged > 0)
         {
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
+        }
+        else
+        {
+            Debug.Log("Player does not have a bow equipped!");
         }
     }
 
@@ -221,6 +227,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
+        playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
     }
 
     private void FixedUpdate()

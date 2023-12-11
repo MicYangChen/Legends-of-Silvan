@@ -28,6 +28,15 @@ public class ItemSO : ScriptableObject
                 return true;
             }
         }
+        if (statToChange == StatToChange.maxHealth)
+        {
+            Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
+            PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+            playerHP.IncreaseMaxHealth(amountToChangeStat);
+            playerHP.Heal(amountToChangeStat);
+            playerstats.UpdateEquipmentStats();
+            return true;
+        }
         if (statToChange == StatToChange.strength)
         {
             PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
@@ -42,6 +51,7 @@ public class ItemSO : ScriptableObject
     {
         none,
         health,
+        maxHealth,
         strength
     };
 

@@ -14,15 +14,15 @@ public class ProjectileFire : MonoBehaviour
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
     }
 
-    public int attackPower
+    public int AttackPower
     {
         get
         {
-            return playerStats.strength;
+            return playerStats.ranged;
         }
         set
         {
-            playerStats.strength = value;
+            playerStats.ranged = value;
         }
     }
 
