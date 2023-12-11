@@ -17,7 +17,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
-    public bool isFull;
+    public bool isFull = false;
     public string itemDescription;
     public Sprite emptySprite;
     public ItemType itemType;
@@ -56,6 +56,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         
         // Update Quantity
         this.quantity += quantity;
+
         if (this.quantity >= maxNumberOfItems)
         {
             quantityText.text = maxNumberOfItems.ToString();
@@ -96,6 +97,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             if (useable)
             {
                 this.quantity -= 1;
+                isFull = false;
                 quantityText.text = this.quantity.ToString();
                 if (this.quantity <= 0)
                 {
@@ -121,7 +123,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private void EmptySlot()
     {
         quantityText.enabled = false;
+        itemSprite = emptySprite;
         itemImage.sprite = emptySprite;
+        itemDescription = "";
+        itemName = "";
+
         ItemDescriptionNameText.text = "";
         ItemDescriptionText.text = "";
         ItemDescriptionImage.sprite = emptySprite;
@@ -150,6 +156,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         // Remove the item
         this.quantity -= 1;
+        isFull = false;
         quantityText.text = this.quantity.ToString();
         if (this.quantity <= 0)
         {
