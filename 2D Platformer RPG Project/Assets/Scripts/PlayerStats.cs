@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TMP_Text healthText, strengthText, defenseText, rangedText;
 
     [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, rangedPreText;
+    [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, rangedNamePanel;
 
     [SerializeField] private Image previewImage;
 
@@ -33,10 +34,49 @@ public class PlayerStats : MonoBehaviour
 
     public void PreviewEquipmentStats(int health, int strength, int defense, int ranged, Sprite itemSprite)
     {
-        healthPreText.text = health.ToString();
-        strengthPreText.text = strength.ToString();
-        defensePreText.text = defense.ToString();
-        rangedPreText.text = ranged.ToString();
+        if (health > 0)
+        {
+            healthPreText.text = health.ToString();
+            healthNamePanel.SetActive(true);
+        }
+        else
+        {
+            healthPreText.text = "";
+            healthNamePanel.SetActive(false);
+        }
+        if (strength > 0)
+        {
+            strengthPreText.text = strength.ToString();
+            strengthNamePanel.SetActive(true);
+        }
+        else
+        {
+            strengthPreText.text = "";
+            strengthNamePanel.SetActive(false);
+        }
+
+        if (defense > 0)
+        {
+            defensePreText.text = defense.ToString();
+            defenseNamePanel.SetActive(true);
+        }
+        else
+        {
+            defensePreText.text = "";
+            defenseNamePanel.SetActive(false);
+        }
+
+        if (ranged > 0)
+        {
+            rangedPreText.text = ranged.ToString();
+            rangedNamePanel.SetActive(true);
+        }
+        else
+        {
+            rangedPreText.text = "";
+            rangedNamePanel.SetActive(false);
+        }
+
 
 
         previewImage.sprite = itemSprite;
