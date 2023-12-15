@@ -102,6 +102,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
                 if (this.quantity <= 0)
                 {
                     EmptySlot();
+                    inventoryManager.DeselectAllSlots();
                 }
             }
         }
