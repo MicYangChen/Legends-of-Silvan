@@ -24,9 +24,16 @@ public class PlayerStats : MonoBehaviour
         UpdateEquipmentStats();
     }
 
+    private void Update()
+    {
+        Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
+        healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
+    }
+
     public void UpdateEquipmentStats()
     {
-        healthText.text = health.ToString();
+        Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
+        healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
         rangedText.text = ranged.ToString();
