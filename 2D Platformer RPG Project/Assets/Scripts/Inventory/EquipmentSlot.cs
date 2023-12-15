@@ -27,6 +27,12 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     // ITEM SLOT
     [SerializeField] private Image itemImage;
 
+    // ITEM DESCRIPTION SLOT
+    public Image ItemDescriptionImage;
+    public TMP_Text ItemDescriptionNameText;
+    public TMP_Text ItemDescriptionText;
+    public GameObject equipmentDescriptionPanel;
+
     // EQUIPPED SLOTS
     [SerializeField] private EquippedSlot helmetSlot, armorSlot, bootsSlot, subWeaponSlot, weaponSlot, accessorySlot, artifactSlot;
 
@@ -80,7 +86,15 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         {
             if (thisItemSelected)
             {
-                EquipGear();
+                if (equipmentDescriptionPanel != null && equipmentDescriptionPanel.activeSelf)
+                {
+                    equipmentDescriptionPanel.SetActive(false);
+                    EquipGear();
+                }
+                else
+                {
+                    equipmentDescriptionPanel.SetActive(true);
+                }
             }
             else
             {
@@ -94,6 +108,14 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                         equipmentSOLibrary.equipmentSO[i].PreviewEquipment();
                     }
                 }
+                equipmentDescriptionPanel.SetActive(true);
+            }
+            ItemDescriptionNameText.text = itemName;
+            ItemDescriptionText.text = itemDescription;
+            ItemDescriptionImage.sprite = itemSprite;
+            if (ItemDescriptionImage == null)
+            {
+                ItemDescriptionImage.sprite = emptySprite;
             }
         }
         else
@@ -102,11 +124,13 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             thisItemSelected = true;
+            equipmentDescriptionPanel.SetActive(false);
         }
     }
 
     private void EquipGear()
     {
+        equipmentDescriptionPanel.SetActive(false);
         switch (itemType)
         {
             case ItemType.helmet:
@@ -158,6 +182,11 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         itemImage.sprite = emptySprite;
         itemDescription = "";
         itemName = "";
+
+        ItemDescriptionNameText.text = "";
+        ItemDescriptionText.text = "";
+        ItemDescriptionImage.sprite = emptySprite;
+        equipmentDescriptionPanel.SetActive(false);
     }
 
     public void OnRightClick()
@@ -187,6 +216,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
         if (this.quantity <= 0)
         {
             EmptySlot();
+            equipmentDescriptionPanel.SetActive(false);
         }
     }
 

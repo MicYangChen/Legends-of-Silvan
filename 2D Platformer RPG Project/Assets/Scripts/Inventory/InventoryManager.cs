@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
+    public GameObject EquipmentDescriptionPanel;
 
     public ItemSlot[] itemSlot;
     public EquipmentSlot[] equipmentSlot;
@@ -23,6 +24,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
+            EquipmentDescriptionPanel.SetActive(false);
             Debug.Log("Inventory Closed!");
         }
         else if (context.started && !InventoryMenu.activeSelf)
@@ -30,6 +32,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             EquipmentMenu.SetActive(false);
+            EquipmentDescriptionPanel.SetActive(false);
             Debug.Log("Inventory Opened!");
         }
     }
@@ -41,6 +44,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
+            EquipmentDescriptionPanel.SetActive(false);
             Debug.Log("Inventory Closed!");
         }
         else if (context.started && !EquipmentMenu.activeSelf)
@@ -48,6 +52,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 0;
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(true);
+            EquipmentDescriptionPanel.SetActive(false);
             Debug.Log("Inventory Opened!");
         }
     }
