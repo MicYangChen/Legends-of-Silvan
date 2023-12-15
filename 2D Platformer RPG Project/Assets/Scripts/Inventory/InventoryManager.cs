@@ -7,6 +7,8 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public bool openUI;
+
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
     public GameObject EquipmentDescriptionPanel;
@@ -25,7 +27,8 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            Debug.Log("Inventory Closed!");
+            openUI = false;
+            Debug.Log("UI Closed!");
         }
         else if (context.started && !InventoryMenu.activeSelf)
         {
@@ -33,7 +36,8 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(true);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            Debug.Log("Inventory Opened!");
+            openUI = true;
+            Debug.Log("UI Opened!");
         }
     }
 
@@ -45,7 +49,8 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            Debug.Log("Inventory Closed!");
+            openUI = false;
+            Debug.Log("UI Closed!");
         }
         else if (context.started && !EquipmentMenu.activeSelf)
         {
@@ -53,7 +58,8 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(true);
             EquipmentDescriptionPanel.SetActive(false);
-            Debug.Log("Inventory Opened!");
+            openUI = true;
+            Debug.Log("UI Opened!");
         }
     }
 
