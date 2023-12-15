@@ -89,6 +89,8 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                 if (equipmentDescriptionPanel != null && equipmentDescriptionPanel.activeSelf)
                 {
                     equipmentDescriptionPanel.SetActive(false);
+                    inventoryManager.DeselectAllSlots();
+                    GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
                     EquipGear();
                 }
                 else
