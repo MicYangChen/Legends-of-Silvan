@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 485017167363391472}
   - component: {fileID: 2184935983089623654}
   - component: {fileID: 5655223143368998666}
+  - component: {fileID: 2937132116002901959}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -395,6 +396,19 @@ MonoBehaviour:
   maxHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2937132116002901959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848862704535749659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7a9501c7e943e4ea02ed7f12acf407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDrops: []
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
