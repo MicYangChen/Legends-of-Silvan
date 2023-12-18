@@ -5,7 +5,6 @@ using UnityEngine;
 public class FadeRemoveBehaviour : StateMachineBehaviour
 {
     SpriteRenderer spriteRenderer;
-    GameObject objectToRemove;
     Color startColor;
 
     public float fadeTime = 1.5f;
