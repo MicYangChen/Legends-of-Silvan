@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3447290410485565579
+--- !u!1 &5596927859453892973
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3447290410485565572}
-  - component: {fileID: 3447290410485565573}
+  - component: {fileID: 5596927859453892972}
+  - component: {fileID: 5596927859453892975}
   m_Layer: 14
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3447290410485565572
+--- !u!4 &5596927859453892972
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410485565579}
+  m_GameObject: {fileID: 5596927859453892973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.4592438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3447290410919072494}
+  m_Father: {fileID: 5596927860842507637}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3447290410485565573
+--- !u!212 &5596927859453892975
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410485565579}
+  m_GameObject: {fileID: 5596927859453892973}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9eaa6d95a1d94ed41866b52732c3f08b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62de20167ce5533428a81c965ea63df8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &3447290410919072493
+--- !u!1 &5596927860842507626
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,42 +92,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3447290410919072494}
-  - component: {fileID: 3447290410919072489}
-  - component: {fileID: 3447290410919072488}
-  - component: {fileID: 3447290410919072495}
-  - component: {fileID: 3447290410919072490}
+  - component: {fileID: 5596927860842507637}
+  - component: {fileID: 5596927860842507638}
+  - component: {fileID: 5596927860842507639}
+  - component: {fileID: 5596927860842507636}
+  - component: {fileID: 5596927860842507633}
   m_Layer: 14
-  m_Name: Fried Eggs
+  m_Name: Topaz Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3447290410919072494
+--- !u!4 &5596927860842507637
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410919072493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.4592438}
+  m_GameObject: {fileID: 5596927860842507626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.87, y: 0, z: 2.4592438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3447290410485565572}
+  - {fileID: 5596927859453892972}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &3447290410919072489
+--- !u!50 &5596927860842507638
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410919072493}
+  m_GameObject: {fileID: 5596927860842507626}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -141,13 +141,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3447290410919072488
+--- !u!61 &5596927860842507639
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410919072493}
+  m_GameObject: {fileID: 5596927860842507626}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -167,30 +167,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3447290410919072495
+--- !u!114 &5596927860842507636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410919072493}
+  m_GameObject: {fileID: 5596927860842507626}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b327956bceed6f248a64b1e132185115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Fried Eggs
+  itemName: Topaz Ring
   quantity: 1
-  sprite: {fileID: 21300000, guid: 9eaa6d95a1d94ed41866b52732c3f08b, type: 3}
-  itemDescription: Delicious looking eggs. Also smells wonderful!
-  itemType: 0
---- !u!114 &3447290410919072490
+  sprite: {fileID: 21300000, guid: 62de20167ce5533428a81c965ea63df8, type: 3}
+  itemDescription: Good looking ring.
+  itemType: 7
+--- !u!114 &5596927860842507633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447290410919072493}
+  m_GameObject: {fileID: 5596927860842507626}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc32848c21624ac49b450dc9932f0f22, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyKill : MonoBehaviour
 {
     public GameObject[] itemDrops;
+    public float[] dropChances;
 
     public void KillEnemy()
     {
@@ -15,7 +16,10 @@ public class EnemyKill : MonoBehaviour
     {
         for (int i = 0; i < itemDrops.Length; i++)
         {
-            Instantiate(itemDrops[i], transform.position, Quaternion.identity);
+            if (Random.value <= dropChances[i])
+            {
+                Instantiate(itemDrops[i], transform.position, Quaternion.identity);
+            }
         }
     }
 }
