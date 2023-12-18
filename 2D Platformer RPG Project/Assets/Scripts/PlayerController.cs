@@ -129,32 +129,32 @@ public class PlayerController : MonoBehaviour
 
     public bool _isFacingRight = true;
 
-    public bool IsFacingRight { 
+    public bool IsFacingRight 
+    { 
         get 
         { 
             return _isFacingRight;  
         }
         private set
         {
-            // Flip, if the value is new
-            if(_isFacingRight != value)
-            {
-                // Flip the local scale to make the player face the opposite direction. Scale also makes child objects flip
-                transform.localScale *= new Vector2(-1, 1);
-            }
             _isFacingRight = value;
-        } }
+        } 
+    }
 
     private void SetFacingDirection(Vector2 moveInput)
     {
         if(moveInput.x > 0 && !IsFacingRight && !inventoryManager.openUI)
         {
             // Face the right
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             IsFacingRight = true;
         }
         else if(moveInput.x < 0 && IsFacingRight && !inventoryManager.openUI)
         {
             // Face the left
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             IsFacingRight = false;
         }
     }
