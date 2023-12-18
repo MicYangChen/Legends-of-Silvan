@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Uses the collider to check direction, if the object is ground, wall or ceiling
@@ -21,6 +23,8 @@ public class TouchingDirections : MonoBehaviour
     [SerializeField] private bool _isOnWall;
     [SerializeField] private bool _isOnCeiling;
 
+    public bool IsPlayer = false;
+
     public bool IsGrounded
     {
         get
@@ -28,7 +32,7 @@ public class TouchingDirections : MonoBehaviour
             return _isGrounded;
         }
         private set
-        { 
+        {
             _isGrounded = value;
             animator.SetBool(AnimationStrings.isGrounded, value);
         }
@@ -60,7 +64,21 @@ public class TouchingDirections : MonoBehaviour
         }
     }
 
-    private Vector2 wallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+    private Vector2 wallCheckDirection
+    {
+        get
+        {
+            if (IsPlayer)
+            {
+                float angle = transform.eulerAngles.y;
+                return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            }
+            else
+            {
+                return new Vector2(transform.localScale.x, 0);
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -74,6 +92,4 @@ public class TouchingDirections : MonoBehaviour
         IsOnWall = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance) > 0;
         IsOnCeiling = touchingCol.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance) > 0;
     }
-
-
 }

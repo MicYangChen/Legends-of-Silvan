@@ -187,6 +187,7 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+  IsPlayer: 1
 --- !u!114 &3842269013856942663
 MonoBehaviour:
   m_ObjectHideFlags: 0
