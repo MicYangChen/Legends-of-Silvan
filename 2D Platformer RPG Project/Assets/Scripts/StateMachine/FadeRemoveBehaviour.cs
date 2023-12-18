@@ -27,11 +27,14 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
 
         spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
 
+
         if(timeElapsed > fadeTime)
         {
             EnemyKill enemyKillScript = animator.GetComponent<EnemyKill>();
+
             if (enemyKillScript != null)
             {
+                enemyKillScript.ItemDrop();
                 enemyKillScript.KillEnemy();
             }
             else
