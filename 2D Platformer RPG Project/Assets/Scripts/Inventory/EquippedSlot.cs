@@ -22,7 +22,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     private string itemDescription;
 
     // OTHER VARIABLES
-    private bool slotInUse;
+    [SerializeField] public bool slotInUse;
     [SerializeField] public GameObject selectedShader;
     [SerializeField] public bool thisItemSelected;
     [SerializeField] private Sprite emptySprite;

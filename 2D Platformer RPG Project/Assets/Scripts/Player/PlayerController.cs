@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     PlayerStats playerStats;
     InventoryManager inventoryManager;
 
+    public GameObject subWeaponSlotObject;
+    private EquippedSlot equippedSlot;
+
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
     public float airWalkSpeed = 6f;
@@ -206,11 +209,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.started && playerStats.ranged > 0 && !inventoryManager.openUI)
+        if (context.started && equippedSlot.slotInUse && !inventoryManager.openUI)
         {
+            Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
-        else
+        else if (inventoryManager.openUI)
+        {
+            Debug.Log("UI is open!");
+        }
+        else if (!equippedSlot.slotInUse)
         {
             Debug.Log("Player does not have a bow equipped!");
         }
@@ -230,6 +238,7 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        equippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
     }
 
     private void FixedUpdate()

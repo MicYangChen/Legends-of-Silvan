@@ -44,7 +44,7 @@ Transform:
   - {fileID: 2388695103398511799}
   - {fileID: 3786891854540816888}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2223829362053832361
 SpriteRenderer:
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d7b5422feadcf4290949d45a0e66a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subWeaponSlotObject: {fileID: 0}
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 6
@@ -350,7 +351,7 @@ MonoBehaviour:
   isInvincible: 0
   _maxHealth: 100
   _health: 100
-  invincibilityTime: 0.5
+  invincibilityTime: 1
   damageableHit:
     m_PersistentCalls:
       m_Calls:
