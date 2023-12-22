@@ -5,16 +5,24 @@ using UnityEngine;
 public class TreasureBoxController : MonoBehaviour
 {
     public bool isOpen;
+
     public Animator animator;
+
     UIManager uiManager;
+    InventoryManager inventoryManager;
+
     public GameObject TreasureBoxUI;
+
     private GameObject sceneBGMObject;
     private AudioSource sceneBGM;
     private float originalBGMVolume;
     public AudioSource boxOpenSound;
 
+    public GameObject itemDrop;
+
     private void Start()
     {
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
 
         if (boxOpenSound == null)
@@ -84,6 +92,10 @@ public class TreasureBoxController : MonoBehaviour
         {
             sceneBGM.volume = originalBGMVolume;
         }
+
+        // Adds the item to player's inventory.
+
+        Instantiate(itemDrop, GameObject.Find("Player").transform.position, Quaternion.identity);
 
         // Resume time
         Time.timeScale = 1;
