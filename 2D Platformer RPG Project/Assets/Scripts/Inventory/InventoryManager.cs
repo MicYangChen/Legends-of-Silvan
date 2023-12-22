@@ -7,8 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public bool openUI;
-
+    UIManager uiManager;
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
     public GameObject EquipmentDescriptionPanel;
@@ -19,6 +18,11 @@ public class InventoryManager : MonoBehaviour
 
     public ItemSO[] itemSOs;
 
+    private void Start()
+    {
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+    }
+
     public void OnInventoryOpen(InputAction.CallbackContext context)
     {
         if (context.started && InventoryMenu.activeSelf)
@@ -27,7 +31,7 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            openUI = false;
+            uiManager.openUI = false;
             Debug.Log("UI Closed!");
         }
         else if (context.started && !InventoryMenu.activeSelf)
@@ -36,7 +40,7 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(true);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            openUI = true;
+            uiManager.openUI = true;
             Debug.Log("UI Opened!");
         }
     }
@@ -49,7 +53,7 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
             EquipmentDescriptionPanel.SetActive(false);
-            openUI = false;
+            uiManager.openUI = false;
             Debug.Log("UI Closed!");
         }
         else if (context.started && !EquipmentMenu.activeSelf)
@@ -58,7 +62,7 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(true);
             EquipmentDescriptionPanel.SetActive(false);
-            openUI = true;
+            uiManager.openUI = true;
             Debug.Log("UI Opened!");
         }
     }

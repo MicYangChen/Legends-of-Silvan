@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     public Canvas gameCanvas;
 
+    public bool openUI;
+
     public void CharacterTookDamage(GameObject character, int damageReceived)
     {
         // Text when character gets hit

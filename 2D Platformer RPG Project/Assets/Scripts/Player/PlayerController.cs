@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     TouchingDirections touchingDirections;
     Damageable damageable;
     PlayerStats playerStats;
-    InventoryManager inventoryManager;
+    UIManager uiManager;
 
     public GameObject subWeaponSlotObject;
     private EquippedSlot equippedSlot;
@@ -146,14 +146,14 @@ public class PlayerController : MonoBehaviour
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-        if(moveInput.x > 0 && !IsFacingRight && !inventoryManager.openUI)
+        if(moveInput.x > 0 && !IsFacingRight && !uiManager.openUI)
         {
             // Face the right
             Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             IsFacingRight = true;
         }
-        else if(moveInput.x < 0 && IsFacingRight && !inventoryManager.openUI)
+        else if(moveInput.x < 0 && IsFacingRight && !uiManager.openUI)
         {
             // Face the left
             Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
 
-        if(IsAlive && !inventoryManager.openUI)
+        if(IsAlive && !uiManager.openUI)
         {
             IsMoving = moveInput != Vector2.zero;
 
@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if(context.started && !inventoryManager.openUI)
+        if(context.started && !uiManager.openUI)
         {
             IsRunning = true;
         }
@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.started && touchingDirections.IsGrounded && CanMove && IsAlive && !inventoryManager.openUI)
+        if(context.started && touchingDirections.IsGrounded && CanMove && IsAlive && !uiManager.openUI)
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.started && !inventoryManager.openUI)
+        if(context.started && !uiManager.openUI)
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }
@@ -209,12 +209,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.started && equippedSlot.slotInUse && !inventoryManager.openUI)
+        if (context.started && equippedSlot.slotInUse && !uiManager.openUI)
         {
             Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
-        else if (inventoryManager.openUI)
+        else if (uiManager.openUI)
         {
             Debug.Log("UI is open!");
         }
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         equippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
     }
 
