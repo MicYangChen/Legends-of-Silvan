@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Topaz Ring
   m_EditorClassIdentifier: 
   itemName: Topaz Ring
-  health: 20
+  health: 10
   strength: 5
   defense: 5
+  ranged: 0
   itemSprite: {fileID: 21300000, guid: 62de20167ce5533428a81c965ea63df8, type: 3}
