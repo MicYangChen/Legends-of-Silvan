@@ -7,6 +7,8 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public bool canAccess;
+
     UIManager uiManager;
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
@@ -25,7 +27,7 @@ public class InventoryManager : MonoBehaviour
 
     public void OnInventoryOpen(InputAction.CallbackContext context)
     {
-        if (context.started && InventoryMenu.activeSelf)
+        if (context.started && InventoryMenu.activeSelf && canAccess)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
@@ -34,7 +36,7 @@ public class InventoryManager : MonoBehaviour
             uiManager.openUI = false;
             Debug.Log("UI Closed!");
         }
-        else if (context.started && !InventoryMenu.activeSelf)
+        else if (context.started && !InventoryMenu.activeSelf && canAccess)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
@@ -47,7 +49,7 @@ public class InventoryManager : MonoBehaviour
 
     public void OnEquipmentOpen(InputAction.CallbackContext context)
     {
-        if (context.started && EquipmentMenu.activeSelf)
+        if (context.started && EquipmentMenu.activeSelf && canAccess)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
@@ -56,7 +58,7 @@ public class InventoryManager : MonoBehaviour
             uiManager.openUI = false;
             Debug.Log("UI Closed!");
         }
-        else if (context.started && !EquipmentMenu.activeSelf)
+        else if (context.started && !EquipmentMenu.activeSelf && canAccess)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(false);

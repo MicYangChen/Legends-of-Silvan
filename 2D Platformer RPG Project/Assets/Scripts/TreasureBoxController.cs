@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TreasureBoxController : MonoBehaviour
 {
@@ -19,6 +22,9 @@ public class TreasureBoxController : MonoBehaviour
     public AudioSource boxOpenSound;
 
     public GameObject itemDrop;
+    // TreasureBoxUI Description of item
+    public Image ItemDescriptionImage;
+    public TMP_Text ItemNameText;
 
     private void Start()
     {
@@ -61,6 +67,8 @@ public class TreasureBoxController : MonoBehaviour
 
     private IEnumerator OpenBoxCoroutine()
     {
+        inventoryManager.canAccess = false;
+
         if (sceneBGM != null)
         {
             sceneBGM.volume = 0.02f;
@@ -73,6 +81,18 @@ public class TreasureBoxController : MonoBehaviour
             boxOpenSound.Play();
         }
 
+        Item itemComponent = itemDrop.GetComponent<Item>();
+
+        UpdateUI(itemComponent.itemName, itemComponent.sprite);
+
+        // Adds the item to player's inventory
+        if (itemComponent != null)
+        {
+            inventoryManager.AddItem(itemComponent.itemName, itemComponent.quantity, itemComponent.sprite, itemComponent.itemDescription, itemComponent.itemType);
+            // if inventory full, drops it on the ground instead
+            // Instantiate(itemDrop, GameObject.Find("Player").transform.position, Quaternion.identity);
+        }
+
         TreasureBoxUI.SetActive(true);
         isOpen = true;
         uiManager.openUI = true;
@@ -81,7 +101,7 @@ public class TreasureBoxController : MonoBehaviour
 
         // Wait for a specific amount of time
 
-        yield return new WaitForSecondsRealtime(6.7f);
+        yield return new WaitForSecondsRealtime(6.7f); // TreasureBox music lasts about 6.5 seconds.
 
         if (boxOpenSound != null)
         {
@@ -93,14 +113,23 @@ public class TreasureBoxController : MonoBehaviour
             sceneBGM.volume = originalBGMVolume;
         }
 
-        // Adds the item to player's inventory.
-
-        Instantiate(itemDrop, GameObject.Find("Player").transform.position, Quaternion.identity);
-
         // Resume time
         Time.timeScale = 1;
 
         TreasureBoxUI.SetActive(false);
         uiManager.openUI = false;
+        inventoryManager.canAccess = true;
+    }
+
+    private void UpdateUI(string itemName, Sprite itemSprite)
+    {
+        if (ItemNameText != null)
+        {
+            ItemNameText.text = "<color=#FFD700>" + itemName + "</color> has been obtained!";
+        }
+        if (ItemDescriptionImage != null)
+        {
+            ItemDescriptionImage.sprite = itemSprite;
+        }
     }
 }
