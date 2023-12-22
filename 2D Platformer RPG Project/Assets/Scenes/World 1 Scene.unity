@@ -1637,8 +1637,8 @@ GameObject:
   - component: {fileID: 147658753}
   - component: {fileID: 147658750}
   - component: {fileID: 147658754}
-  - component: {fileID: 147658755}
   - component: {fileID: 147658756}
+  - component: {fileID: 147658755}
   m_Layer: 0
   m_Name: Treasure Box
   m_TagString: Untagged
@@ -1797,6 +1797,7 @@ MonoBehaviour:
   animator: {fileID: 147658754}
   TreasureBoxUI: {fileID: 1554398456}
   boxOpenSound: {fileID: 147658756}
+  itemDrop: {fileID: 243646274300644639, guid: 36227134aa5a9fa468b1967b573ece13, type: 3}
 --- !u!82 &147658756
 AudioSource:
   m_ObjectHideFlags: 0
