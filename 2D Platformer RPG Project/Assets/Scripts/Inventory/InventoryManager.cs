@@ -7,7 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public bool canAccess;
+    public bool canAccess = true;
 
     UIManager uiManager;
     public GameObject InventoryMenu;

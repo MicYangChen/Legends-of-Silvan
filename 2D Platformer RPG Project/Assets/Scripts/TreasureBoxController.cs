@@ -55,6 +55,8 @@ public class TreasureBoxController : MonoBehaviour
         {
             Debug.LogError("BGM GameObject not found.");
         }
+
+        inventoryManager.canAccess = true;
     }
 
     public void OpenBox()
@@ -86,11 +88,43 @@ public class TreasureBoxController : MonoBehaviour
         UpdateUI(itemComponent.itemName, itemComponent.sprite);
 
         // Adds the item to player's inventory
+
         if (itemComponent != null)
         {
-            inventoryManager.AddItem(itemComponent.itemName, itemComponent.quantity, itemComponent.sprite, itemComponent.itemDescription, itemComponent.itemType);
-            // if inventory full, drops it on the ground instead
-            // Instantiate(itemDrop, GameObject.Find("Player").transform.position, Quaternion.identity);
+            bool foundEmptySlot = false;
+
+            foreach (ItemSlot slot in inventoryManager.itemSlot)
+            {
+                if (!slot.isFull)
+                {
+                    foundEmptySlot = true;
+                    break;
+                }
+            }
+
+            bool foundEmptyEquipSlot = false;
+
+            foreach (EquipmentSlot slot in inventoryManager.equipmentSlot)
+            {
+                if (!slot.isFull)
+                {
+                    foundEmptyEquipSlot = true;
+                    break;
+                }
+            }
+
+            if (foundEmptySlot && (itemComponent.itemType == ItemType.consumable || itemComponent.itemType == ItemType.collectible))
+            {
+                inventoryManager.AddItem(itemComponent.itemName, itemComponent.quantity, itemComponent.sprite, itemComponent.itemDescription, itemComponent.itemType);
+            }
+            else if (foundEmptyEquipSlot)
+            {
+                inventoryManager.AddItem(itemComponent.itemName, itemComponent.quantity, itemComponent.sprite, itemComponent.itemDescription, itemComponent.itemType);
+            }
+            else
+            {
+                Instantiate(itemDrop, GameObject.Find("Player").transform.position, Quaternion.identity);
+            }
         }
 
         TreasureBoxUI.SetActive(true);
