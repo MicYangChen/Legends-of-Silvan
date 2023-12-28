@@ -10,6 +10,8 @@ public class ExpSystem : MonoBehaviour
     public int exp;
     public int requireExp;
 
+    public int hpIncrease, strIncrease, defIncrease;
+
     public LevelConfig levelConfig;
 
     public Image expBar;
@@ -48,9 +50,26 @@ public class ExpSystem : MonoBehaviour
 
     public void LevelUp()
     {
-        level++;
-        levelUpSound.Play();
-        CalculateRequiredExp();
+        if (level < levelConfig.MaxLevel)
+        {
+            PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+            Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
+
+            playerHP.IncreaseMaxHealth(hpIncrease);
+            playerStats.health += hpIncrease;
+            playerStats.strength += strIncrease;
+            playerStats.defense += defIncrease;
+            playerStats.UpdateEquipmentStats();
+
+            level++;
+            levelUpSound.Play();
+            CalculateRequiredExp();
+        }
+        else
+        {
+            _ = level;
+        }
+        
     }
 
     // Update is called once per frame

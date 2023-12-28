@@ -46831,9 +46831,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 965208245}
     - target: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: hpIncrease
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: defIncrease
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: strIncrease
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
       propertyPath: levelUpSound
       value: 
       objectReference: {fileID: 1927017771}
+    - target: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: rangedIncrease
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199573235503205674, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
       propertyPath: m_Name
       value: Player
