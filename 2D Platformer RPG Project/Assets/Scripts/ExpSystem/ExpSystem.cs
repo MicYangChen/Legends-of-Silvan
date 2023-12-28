@@ -56,6 +56,7 @@ public class ExpSystem : MonoBehaviour
             Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
 
             playerHP.IncreaseMaxHealth(hpIncrease);
+            playerHP.Health = playerHP.MaxHealth;
             playerStats.health += hpIncrease;
             playerStats.strength += strIncrease;
             playerStats.defense += defIncrease;
