@@ -18,6 +18,10 @@ public class EnemyKill : MonoBehaviour
     public void KillEnemy()
     {
         expSystem.IncreaseExp(experience);
+    }
+
+    public void DestroyEnemy()
+    {
         Destroy(gameObject);
     }
 

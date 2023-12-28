@@ -6,6 +6,7 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
 {
     SpriteRenderer spriteRenderer;
     Color startColor;
+    EnemyKill enemyKillScript;
 
     public float fadeTime = 1.5f;
     private float timeElapsed = 0f;
@@ -16,6 +17,8 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
         timeElapsed = 0f;
         spriteRenderer = animator.GetComponent<SpriteRenderer>();
         startColor = spriteRenderer.color;
+        enemyKillScript = animator.GetComponent<EnemyKill>();
+        enemyKillScript.KillEnemy();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -34,8 +37,8 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
 
             if (enemyKillScript != null)
             {
+                enemyKillScript.DestroyEnemy();
                 enemyKillScript.ItemDrop();
-                enemyKillScript.KillEnemy();
             }
             else
             {
