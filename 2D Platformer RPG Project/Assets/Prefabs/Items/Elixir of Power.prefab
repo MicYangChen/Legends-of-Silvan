@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5746888815717759965}
   - component: {fileID: 5746888815717759960}
   m_Layer: 14
-  m_Name: Elixir of Strength
+  m_Name: Elixir of Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -182,7 +182,7 @@ MonoBehaviour:
   itemName: Goddess Grace
   quantity: 1
   sprite: {fileID: 21300000, guid: 62c8aa3cdc4681c43bf08eca8e2079c4, type: 3}
-  itemDescription: Ultimate Power.
+  itemDescription: Ultimate Power. Grants the ability 'Double Jump'.
   itemType: 8
 --- !u!114 &4287114822097896983
 MonoBehaviour:

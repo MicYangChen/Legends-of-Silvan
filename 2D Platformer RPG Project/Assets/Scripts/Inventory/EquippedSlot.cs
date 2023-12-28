@@ -18,7 +18,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private ItemType itemType = new ItemType();
 
     private Sprite itemSprite;
-    private string itemName;
+    public string itemName;
     private string itemDescription;
 
     // OTHER VARIABLES

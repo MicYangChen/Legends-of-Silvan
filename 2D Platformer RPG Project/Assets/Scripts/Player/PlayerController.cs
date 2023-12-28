@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,13 +17,16 @@ public class PlayerController : MonoBehaviour
     UIManager uiManager;
 
     public GameObject subWeaponSlotObject;
-    private EquippedSlot equippedSlot;
+    private EquippedSlot subWeaponEquippedSlot;
+    public GameObject artifactSlotObject;
+    private EquippedSlot artifactEquippedSlot;
 
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
     public float airWalkSpeed = 6f;
     public float airRunSpeed = 12;
     public float jumpImpulse = 8f;
+    public bool doubleJump;
 
     Vector2 moveInput;
 
@@ -196,6 +200,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            doubleJump = true;
+        }
+        else if (context.started && doubleJump && CanMove && IsAlive && !uiManager.openUI && (artifactEquippedSlot.itemName == "Skybound Grimoire" || artifactEquippedSlot.itemName == "Goddess Grace"))
+        {
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse - 0.5f);
+            doubleJump = false;
         }
     }
 
@@ -209,7 +220,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.started && equippedSlot.slotInUse && !uiManager.openUI)
+        if (context.started && subWeaponEquippedSlot.slotInUse && !uiManager.openUI)
         {
             Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
@@ -218,7 +229,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("UI is open!");
         }
-        else if (!equippedSlot.slotInUse)
+        else if (!subWeaponEquippedSlot.slotInUse)
         {
             Debug.Log("Player does not have a bow equipped!");
         }
@@ -238,7 +249,8 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-        equippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
+        subWeaponEquippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
+        artifactEquippedSlot = artifactSlotObject.GetComponent<EquippedSlot>();
     }
 
     private void FixedUpdate()
