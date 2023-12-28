@@ -16,5 +16,5 @@ MonoBehaviour:
   health: 50
   strength: 0
   defense: 5
-  ranged: 85
+  ranged: 3.5
   itemSprite: {fileID: 21300000, guid: 5d16c3d0aceb9314096fcbef093a9022, type: 3}

@@ -18,11 +18,11 @@ public class ProjectileFire : MonoBehaviour
     {
         get
         {
-            return playerStats.ranged;
+            return Mathf.RoundToInt(playerStats.strength * playerStats.ranged);
         }
         set
         {
-            playerStats.ranged = value;
+            playerStats.strength = value;
         }
     }
 

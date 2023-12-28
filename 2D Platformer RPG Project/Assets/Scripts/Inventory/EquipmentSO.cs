@@ -7,7 +7,12 @@ using static ItemSO;
 public class EquipmentSO : ScriptableObject
 {
     public string itemName;
-    public int health, strength, defense, ranged;
+
+    // Stats
+    public int health, strength, defense;
+
+    // Multipliers or Scaling
+    public float ranged;
 
     [SerializeField] private Sprite itemSprite;
 

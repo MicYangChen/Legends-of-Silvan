@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health, strength, defense, ranged;
+    public int health, strength, defense;
+    public float ranged;
     public int currentExp, maxExp, currentLevel;
 
     [SerializeField] private TMP_Text healthText, strengthText, defenseText, rangedText;
@@ -36,10 +37,10 @@ public class PlayerStats : MonoBehaviour
         healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
-        rangedText.text = ranged.ToString();
+        rangedText.text = (ranged * 100).ToString() + "%";
     }
 
-    public void PreviewEquipmentStats(int health, int strength, int defense, int ranged, Sprite itemSprite)
+    public void PreviewEquipmentStats(int health, int strength, int defense, float ranged, Sprite itemSprite)
     {
         if (health > 0)
         {
@@ -75,7 +76,7 @@ public class PlayerStats : MonoBehaviour
 
         if (ranged > 0)
         {
-            rangedPreText.text = ranged.ToString();
+            rangedPreText.text = (ranged*100).ToString() + "%";
             rangedNamePanel.SetActive(true);
         }
         else
