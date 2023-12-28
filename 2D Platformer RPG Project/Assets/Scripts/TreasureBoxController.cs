@@ -135,7 +135,7 @@ public class TreasureBoxController : MonoBehaviour
 
         // Wait for a specific amount of time
 
-        yield return new WaitForSecondsRealtime(6.7f); // TreasureBox music lasts about 6.5 seconds.
+        yield return new WaitForSecondsRealtime(5f); // TreasureBox music lasts about 5 seconds.
 
         if (boxOpenSound != null)
         {
