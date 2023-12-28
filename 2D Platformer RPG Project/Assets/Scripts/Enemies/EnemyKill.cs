@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class EnemyKill : MonoBehaviour
 {
+    ExpSystem expSystem;
+
     public GameObject[] itemDrops;
     public float[] dropChances;
+    public int experience;
+
+    public void Awake()
+    {
+        expSystem = GameObject.Find("Player").GetComponent<ExpSystem>();
+    }
 
     public void KillEnemy()
     {
+        expSystem.IncreaseExp(experience);
         Destroy(gameObject);
     }
 
