@@ -16,6 +16,9 @@ public class ExpSystem : MonoBehaviour
     public TMP_Text expText;
     public TMP_Text levelText;
 
+    public AudioSource levelUpSound;
+
+
     void Start()
     {
         CalculateRequiredExp();
@@ -45,15 +48,9 @@ public class ExpSystem : MonoBehaviour
 
     public void LevelUp()
     {
-        if (level < levelConfig.MaxLevel)
-        {
-            level++;
-            CalculateRequiredExp();
-        }
-        else
-        {
-            
-        }
+        level++;
+        levelUpSound.Play();
+        CalculateRequiredExp();
     }
 
     // Update is called once per frame
