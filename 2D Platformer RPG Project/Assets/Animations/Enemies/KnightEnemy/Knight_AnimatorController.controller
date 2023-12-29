@@ -441,7 +441,7 @@ MonoBehaviour:
   playOnEnter: 1
   playOnExit: 0
   playAfterDelay: 0
-  playDelay: 0.1
+  playDelay: 0
 --- !u!1102 &6188530852030680478
 AnimatorState:
   serializedVersion: 6
@@ -588,7 +588,7 @@ MonoBehaviour:
   volume: 1
   playOnEnter: 1
   playOnExit: 0
-  playAfterDelay: 0
+  playAfterDelay: 1
   playDelay: 0.25
 --- !u!1107 &7925321920012118829
 AnimatorStateMachine:

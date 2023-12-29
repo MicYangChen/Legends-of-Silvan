@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject damageTextPrefab;
     public GameObject healthTextPrefab;
+    public GameObject levelUpTextPrefab;
 
     public Canvas gameCanvas;
 
@@ -33,17 +34,29 @@ public class UIManager : MonoBehaviour
         tmpText.text = healthReceived.ToString();
     }
 
+    public void CharacterLevelUp(GameObject character, string leveledUp)
+    {
+        // Text when character levels up
+        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        TMP_Text tmpText = Instantiate(levelUpTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
+
+        tmpText.text = leveledUp;
+    }
+
     // If UI Manager is enabled or not
     private void OnEnable()
     {
         CharacterEvents.characterDamaged += CharacterTookDamage;
         CharacterEvents.characterHealed += CharacterHealed;
+        CharacterEvents.characterLeveledUp += CharacterLevelUp;
     }
 
     private void OnDisable()
     {
         CharacterEvents.characterDamaged -= CharacterTookDamage;
         CharacterEvents.characterHealed -= CharacterHealed;
+        CharacterEvents.characterLeveledUp -= CharacterLevelUp;
     }
 
     public void OnExitGame(InputAction.CallbackContext context)

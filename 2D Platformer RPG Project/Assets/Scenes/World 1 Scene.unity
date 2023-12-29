@@ -47891,6 +47891,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5372511074104831773, guid: b97c0b363fd8db845961cac7154b8a93, type: 3}
+      propertyPath: levelUpTextPrefab
+      value: 
+      objectReference: {fileID: 1406917009651349012, guid: c3040600d90d8dd47b454fc1074516f3, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b97c0b363fd8db845961cac7154b8a93, type: 3}

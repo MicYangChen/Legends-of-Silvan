@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class ExpSystem : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class ExpSystem : MonoBehaviour
             playerStats.defense += defIncrease;
             playerStats.UpdateEquipmentStats();
 
+            CharacterEvents.characterLeveledUp(gameObject, "LvL UP!");
             level++;
             levelUpSound.Play();
             CalculateRequiredExp();
