@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public int health, strength, defense;
-    public float ranged;
+    public float critChance, ranged;
     public int currentExp, maxExp, currentLevel;
 
-    [SerializeField] private TMP_Text healthText, strengthText, defenseText, rangedText;
+    [SerializeField] private TMP_Text healthText, strengthText, defenseText, critChanceText, rangedText;
 
-    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, rangedPreText;
-    [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, rangedNamePanel;
+    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, critChancePreText, rangedPreText;
+    [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, critChanceNamePanel, rangedNamePanel;
 
     [SerializeField] private Image previewImage;
 
@@ -37,10 +37,11 @@ public class PlayerStats : MonoBehaviour
         healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
+        critChanceText.text = (critChance * 100).ToString() + "%";
         rangedText.text = (ranged * 100).ToString() + "%";
     }
 
-    public void PreviewEquipmentStats(int health, int strength, int defense, float ranged, Sprite itemSprite)
+    public void PreviewEquipmentStats(int health, int strength, int defense, float critChance, float ranged, Sprite itemSprite)
     {
         if (health > 0)
         {
@@ -74,9 +75,20 @@ public class PlayerStats : MonoBehaviour
             defenseNamePanel.SetActive(false);
         }
 
+        if (critChance > 0)
+        {
+            critChancePreText.text = (critChance * 100).ToString() + "%";
+            critChanceNamePanel.SetActive(true);
+        }
+        else
+        {
+            critChancePreText.text = "";
+            critChanceNamePanel.SetActive(false);
+        }
+
         if (ranged > 0)
         {
-            rangedPreText.text = (ranged*100).ToString() + "%";
+            rangedPreText.text = (ranged * 100).ToString() + "%";
             rangedNamePanel.SetActive(true);
         }
         else
@@ -84,8 +96,6 @@ public class PlayerStats : MonoBehaviour
             rangedPreText.text = "";
             rangedNamePanel.SetActive(false);
         }
-
-
 
         previewImage.sprite = itemSprite;
 

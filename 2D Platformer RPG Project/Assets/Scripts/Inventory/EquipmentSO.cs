@@ -12,39 +12,41 @@ public class EquipmentSO : ScriptableObject
     public int health, strength, defense;
 
     // Multipliers or Scaling
-    public float ranged;
+    public float critChance, ranged;
 
     [SerializeField] private Sprite itemSprite;
 
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(health, strength, defense, ranged, itemSprite);
+            PreviewEquipmentStats(health, strength, defense, critChance, ranged, itemSprite);
     }
 
     public void EquipItem()
     {
-        PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+        PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         playerHP.IncreaseMaxHealth(health);
-        playerstats.health += health;
-        playerstats.strength += strength;
-        playerstats.defense += defense;
-        playerstats.ranged += ranged;
+        playerStats.health += health;
+        playerStats.strength += strength;
+        playerStats.defense += defense;
+        playerStats.critChance += critChance;
+        playerStats.ranged += ranged;
 
-        playerstats.UpdateEquipmentStats();
+        playerStats.UpdateEquipmentStats();
     }
 
     public void UnEquipItem()
     {
-        PlayerStats playerstats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+        PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         playerHP.DecreaseMaxHealth(health);
-        playerstats.health -= health;
-        playerstats.strength -= strength;
-        playerstats.defense -= defense;
-        playerstats.ranged -= ranged;
+        playerStats.health -= health;
+        playerStats.strength -= strength;
+        playerStats.defense -= defense;
+        playerStats.critChance -= critChance;
+        playerStats.ranged -= ranged;
 
-        playerstats.UpdateEquipmentStats();
+        playerStats.UpdateEquipmentStats();
     }
 }

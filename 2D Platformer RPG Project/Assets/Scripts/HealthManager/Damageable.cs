@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     Animator animator;
+    Attack playerAttack;
 
     [SerializeField] private bool _isAlive = true;
     [SerializeField] private bool isInvincible = false;
@@ -88,8 +89,20 @@ public class Damageable : MonoBehaviour
             // Notify other components that the damageable was hit to handle the knockback etc.
             animator.SetTrigger(AnimationStrings.hitTrigger);
             LockVelocity = true;
-            damageableHit?.Invoke(damage, knockback);
-            CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+
+            // If Player does Critical Damage, then Damage UI is slightly different. Enemy NPC Always deal normal Damage
+            if (playerAttack.isCritical)
+            {
+                damageableHit?.Invoke(damage, knockback);
+                CharacterEvents.characterCritDamaged.Invoke(gameObject, damage);
+                Debug.Log("Critical Damage Dealt.");
+            }
+            else
+            {
+                damageableHit?.Invoke(damage, knockback);
+                CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+                Debug.Log("Normal Damage Dealt.");
+            }
 
             return true;
         }
@@ -127,6 +140,7 @@ public class Damageable : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        playerAttack = GameObject.Find("Player").GetComponentInChildren<Attack>();
     }
 
     private void Update()
