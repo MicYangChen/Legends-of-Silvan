@@ -25,6 +25,7 @@ public class EnemyAttack : MonoBehaviour
             if (gotHit)
             {
                 Debug.Log(collision.name + " hit for " + damageDealt);
+                CharacterEvents.characterDamaged.Invoke(gameObject, damageDealt);
             }
         }
     }

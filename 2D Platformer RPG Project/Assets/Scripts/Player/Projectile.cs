@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private ProjectileFire projectileFire;
+    private PlayerStats playerStats;
 
     public Vector2 moveSpeed = new Vector2(3f, 0);
     public Vector2 knockback = new Vector2(0, 0);
@@ -12,10 +13,13 @@ public class Projectile : MonoBehaviour
 
     Rigidbody2D rb;
 
+    private bool isCritical;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         projectileFire = GameObject.Find("Player").GetComponentInChildren<ProjectileFire>();
+        playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
     }
 
     void Start()
@@ -33,14 +37,34 @@ public class Projectile : MonoBehaviour
             
             randomMultiplier = Random.Range(0.75f, 1.25f);
 
+            float critRoll = Random.value;
+            isCritical = critRoll <= playerStats.critChance;
+
             int damageDealt = Mathf.RoundToInt(projectileFire.AttackPower * randomMultiplier); // Bow deals R.ATT Damage
+
+            if (isCritical)
+            {
+                damageDealt *= 2;
+                Debug.Log("Critical Damage!");
+            }
 
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
             if (gotHit)
             {
                 Debug.Log(collision.name + " hit for " + damageDealt);
+
+                if (isCritical)
+                {
+                    CharacterEvents.characterCritDamaged.Invoke(collision.gameObject, damageDealt);
+                }
+                else
+                {
+                    CharacterEvents.characterDamaged.Invoke(gameObject, damageDealt);
+                }
+
                 Destroy(gameObject);
             }
+            isCritical = false;
         }
     }
 }

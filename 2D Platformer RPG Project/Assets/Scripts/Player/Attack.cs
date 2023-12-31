@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
     private float randomMultiplier = 1f;
     public Vector2 knockback = Vector2.zero;
 
-    public bool isCritical;
+    private bool isCritical;
 
     private void Start()
     {
@@ -46,6 +46,16 @@ public class Attack : MonoBehaviour
             if(gotHit)
             {
                 Debug.Log(collision.name + " hit for " + damageDealt);
+                
+                // If dealt damage is critical, display a critical damage UI instead of the regular one.
+                if (isCritical)
+                {
+                    CharacterEvents.characterCritDamaged.Invoke(collision.gameObject, damageDealt);
+                }
+                else
+                {
+                    CharacterEvents.characterDamaged.Invoke(gameObject, damageDealt);
+                }
             }
             isCritical = false;
         }

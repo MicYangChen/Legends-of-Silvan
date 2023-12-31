@@ -89,20 +89,9 @@ public class Damageable : MonoBehaviour
             // Notify other components that the damageable was hit to handle the knockback etc.
             animator.SetTrigger(AnimationStrings.hitTrigger);
             LockVelocity = true;
-
-            // If Player does Critical Damage, then Damage UI is slightly different. Enemy NPC Always deal normal Damage
-            if (playerAttack.isCritical)
-            {
-                damageableHit?.Invoke(damage, knockback);
-                CharacterEvents.characterCritDamaged.Invoke(gameObject, damage);
-                Debug.Log("Critical Damage Dealt.");
-            }
-            else
-            {
-                damageableHit?.Invoke(damage, knockback);
-                CharacterEvents.characterDamaged.Invoke(gameObject, damage);
-                Debug.Log("Normal Damage Dealt.");
-            }
+            
+            // CharacterEvents of the damage is handled in Attack and EnemyAttack scripts.
+            damageableHit?.Invoke(damage, knockback);
 
             return true;
         }
