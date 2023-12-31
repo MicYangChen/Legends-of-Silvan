@@ -41,6 +41,10 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         playerHP.DecreaseMaxHealth(health);
+        if (playerHP.MaxHealth < playerHP.Health)
+        {
+            playerHP.Health = playerHP.MaxHealth;
+        }
         playerStats.health -= health;
         playerStats.strength -= strength;
         playerStats.defense -= defense;
