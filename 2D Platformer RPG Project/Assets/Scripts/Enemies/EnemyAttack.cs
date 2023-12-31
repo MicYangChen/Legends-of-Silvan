@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public int level;
     public int attackDamage = 10;
     private float randomMultiplier = 1f;
     public Vector2 knockback = Vector2.zero;

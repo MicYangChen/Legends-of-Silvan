@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   attackDamage: 10
   knockback: {x: 3, y: 2}
 --- !u!1 &5454023877989732306
@@ -358,6 +359,7 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+  IsPlayer: 0
 --- !u!114 &5655223143368998666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDrops: []
+  dropChances: []
+  experience: 0
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0

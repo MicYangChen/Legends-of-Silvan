@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     public float critChance, ranged;
     public int currentExp, maxExp, currentLevel;
 
-    [SerializeField] private TMP_Text healthText, strengthText, defenseText, critChanceText, rangedText;
+    [SerializeField] private TMP_Text levelText, healthText, strengthText, defenseText, critChanceText, rangedText;
 
     [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, critChancePreText, rangedPreText;
     [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, critChanceNamePanel, rangedNamePanel;
@@ -29,6 +29,8 @@ public class PlayerStats : MonoBehaviour
     {
         Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
+        ExpSystem expSystem = GameObject.Find("Player").GetComponent<ExpSystem>();
+        levelText.text = "Lv. " + expSystem.level.ToString();
     }
 
     public void UpdateEquipmentStats()

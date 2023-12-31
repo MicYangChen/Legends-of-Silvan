@@ -81,13 +81,13 @@ public class ExpSystem : MonoBehaviour
         if (level < levelConfig.MaxLevel)
         {
             expBar.fillAmount = ((float)exp / (float)requireExp);
-            levelText.text = "LVL: " + level;
+            levelText.text = "Lv. " + level;
             expText.text = exp + " / " + requireExp;
         }
         else
         {
             expBar.fillAmount = 1f;
-            levelText.text = "LVL: " + levelConfig.MaxLevel + " (MAX)";
+            levelText.text = "Lv. " + levelConfig.MaxLevel + " (MAX)";
             expText.text = "0 / 0";
         }
     }
