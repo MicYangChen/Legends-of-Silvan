@@ -84,6 +84,10 @@ public class Damageable : MonoBehaviour
         if(IsAlive && !isInvincible)
         {
             Health -= damage;
+
+            // Health can't drop below 0
+            Health = Mathf.Max(0, Health);
+
             isInvincible = true;
 
             // Notify other components that the damageable was hit to handle the knockback etc.
