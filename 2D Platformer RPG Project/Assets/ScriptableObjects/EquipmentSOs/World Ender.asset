@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a84fb13dd35b6434087d5d4c04dd42b5, type: 3}
-  m_Name: Goddess Grace
+  m_Name: World Ender
   m_EditorClassIdentifier: 
-  itemName: Goddess Grace
-  health: 200
-  strength: 100
-  defense: 100
-  critChance: 0.8
-  ranged: 3
-  itemSprite: {fileID: 21300000, guid: 62c8aa3cdc4681c43bf08eca8e2079c4, type: 3}
+  itemName: World Ender
+  health: 1000
+  strength: 9999
+  defense: 50
+  critChance: 0
+  ranged: 0
+  itemSprite: {fileID: 21300000, guid: 3f4bfa0fc6cd6d541a4131fe1e2f3616, type: 3}

@@ -299,11 +299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subWeaponSlotObject: {fileID: 0}
+  artifactSlotObject: {fileID: 0}
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 6
   airRunSpeed: 12
   jumpImpulse: 8
+  doubleJump: 0
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -463,8 +465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isAlive: 1
   isInvincible: 0
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 50
+  _health: 50
   invincibilityTime: 1
   damageableHit:
     m_PersistentCalls:
@@ -502,10 +504,14 @@ MonoBehaviour:
   level: 1
   exp: 0
   requireExp: 0
+  hpIncrease: 0
+  strIncrease: 0
+  defIncrease: 0
   levelConfig: {fileID: 11400000, guid: bcebfae83788b0342a0ca51d31b0bbe7, type: 2}
   expBar: {fileID: 0}
   expText: {fileID: 0}
   levelText: {fileID: 0}
+  levelUpSound: {fileID: 0}
 --- !u!114 &423191943982148803
 MonoBehaviour:
   m_ObjectHideFlags: 0
