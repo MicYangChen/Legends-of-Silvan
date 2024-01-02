@@ -39,7 +39,7 @@ public class PlayerStats : MonoBehaviour
         healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
-        critChanceText.text = (critChance * 100).ToString() + "%";
+        critChanceText.text = (Mathf.Min(100, critChance * 100)).ToString() + "%";
         rangedText.text = (ranged * 100).ToString() + "%";
     }
 
@@ -79,7 +79,7 @@ public class PlayerStats : MonoBehaviour
 
         if (critChance > 0)
         {
-            critChancePreText.text = (critChance * 100).ToString() + "%";
+            critChancePreText.text = (Mathf.Min(100, critChance * 100)).ToString() + "%";
             critChanceNamePanel.SetActive(true);
         }
         else
