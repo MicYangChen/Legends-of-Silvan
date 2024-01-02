@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,17 @@ public class ParallaxEffect : MonoBehaviour
     {
         startingPosition = transform.position;
         startingZ = transform.position.z;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            followTarget = player.transform;
+        }
+        else
+        {
+            Debug.LogError("Player gameObject not found in this Scene");
+        }
     }
 
     // Update is called once per frame
