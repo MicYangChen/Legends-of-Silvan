@@ -91,6 +91,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        gameCanvas = FindObjectOfType<Canvas>();
+        // gameCanvas = FindObjectOfType<Canvas>();
+        gameCanvas = GameObject.Find("GameCanvas").GetComponent<Canvas>();
     }
 }
