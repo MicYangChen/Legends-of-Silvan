@@ -249,6 +249,8 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        subWeaponSlotObject = GameObject.Find("SubWeaponSlot");
+        artifactSlotObject = GameObject.Find("ArtifactSlot");
         subWeaponEquippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
         artifactEquippedSlot = artifactSlotObject.GetComponent<EquippedSlot>();
     }
