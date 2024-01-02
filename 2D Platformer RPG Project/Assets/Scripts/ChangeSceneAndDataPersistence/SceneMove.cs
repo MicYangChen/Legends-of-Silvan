@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneMove : MonoBehaviour
 {
+    [SerializeField] Animator transitionAnim;
+
     // Check the scene build index and move to that specific Scene
     public int sceneBuildIndex;
 
@@ -16,7 +18,14 @@ public class SceneMove : MonoBehaviour
         if (collision.tag == "Player")
         {
             print("Switching Scene to " + sceneBuildIndex);
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            StartCoroutine(LoadLevel());
         }
+    }
+    IEnumerator LoadLevel()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        transitionAnim.SetTrigger("Start");
     }
 }
