@@ -3243,6 +3243,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
+--- !u!114 &495500369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9097722728758340534, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
+  m_PrefabInstance: {fileID: 495500368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -28981,6 +28992,10 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 273219609}
+    - target: {fileID: 4943720778985021820, guid: c1200b16cee66514eb914cf22e8ed6b8, type: 3}
+      propertyPath: attackText
+      value: 
+      objectReference: {fileID: 495500369}
     - target: {fileID: 4943720778985021820, guid: c1200b16cee66514eb914cf22e8ed6b8, type: 3}
       propertyPath: healthText
       value: 

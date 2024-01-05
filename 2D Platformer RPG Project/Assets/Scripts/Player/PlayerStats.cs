@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     public float critChance, ranged;
     public int currentExp, maxExp, currentLevel;
 
-    [SerializeField] private TMP_Text levelText, healthText, strengthText, defenseText, critChanceText, rangedText;
+    [SerializeField] private TMP_Text levelText, healthText, attackText, strengthText, defenseText, critChanceText, rangedText;
 
     [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, critChancePreText, rangedPreText;
     [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, critChanceNamePanel, rangedNamePanel;
@@ -37,6 +37,7 @@ public class PlayerStats : MonoBehaviour
     {
         Damageable playerHP = GameObject.Find("Player").GetComponent<Damageable>();
         healthText.text = playerHP.Health.ToString() + " / " + playerHP.MaxHealth.ToString();
+        attackText.text = (Mathf.RoundToInt(0.8f * strength)).ToString() + " - " + (Mathf.RoundToInt(1.2f * strength)).ToString();
         strengthText.text = strength.ToString();
         defenseText.text = defense.ToString();
         critChanceText.text = (Mathf.Min(100, critChance * 100)).ToString() + "%";
