@@ -40738,6 +40738,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 189760986570822566, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
+      propertyPath: m_Name
+      value: RightPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 189760986581127929, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

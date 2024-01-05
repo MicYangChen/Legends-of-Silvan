@@ -2196,6 +2196,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 189760986570822566, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
+      propertyPath: m_Name
+      value: RightPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 189760986581127929, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3351,7 +3355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.796677, y: -0.00893, z: 0}
+  m_LocalPosition: {x: 52.78922, y: -0.008959999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
