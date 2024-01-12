@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3616624875232905521}
   - component: {fileID: 1927017770}
   - component: {fileID: 423191943982148803}
+  - component: {fileID: 1927017781}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -46,7 +47,7 @@ Transform:
   - {fileID: 2388695103398511799}
   - {fileID: 3786891854540816888}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2223829362053832361
 SpriteRenderer:
@@ -167,9 +168,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 80d5fe2b56b623f468b87940b7ccc7d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -504,14 +505,14 @@ MonoBehaviour:
   level: 1
   exp: 0
   requireExp: 0
-  hpIncrease: 0
-  strIncrease: 0
-  defIncrease: 0
+  hpIncrease: 8
+  strIncrease: 3
+  defIncrease: 3
   levelConfig: {fileID: 11400000, guid: bcebfae83788b0342a0ca51d31b0bbe7, type: 2}
   expBar: {fileID: 0}
   expText: {fileID: 0}
   levelText: {fileID: 0}
-  levelUpSound: {fileID: 0}
+  levelUpSound: {fileID: 1764446099842347772}
 --- !u!114 &423191943982148803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +527,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 5232239947780525375}
   projectilePrefab: {fileID: 3887501813201176917, guid: bdaf48464b713fe49a4b1ede42e219cf, type: 3}
+--- !u!114 &1927017781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199573235503205674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f776acaf64772f47844fbd8052788e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instanceIndex: 0
 --- !u!1 &1386680071567737459
 GameObject:
   m_ObjectHideFlags: 0

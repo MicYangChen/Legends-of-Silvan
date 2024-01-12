@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     PlayerStats playerStats;
     UIManager uiManager;
+    PlayerManaSystem playerManaSystem;
 
     public GameObject subWeaponSlotObject;
     private EquippedSlot subWeaponEquippedSlot;
@@ -225,6 +226,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
+            playerManaSystem.UseMana(20);
         }
         else if (uiManager.openUI)
         {
@@ -249,6 +251,7 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        playerManaSystem = GetComponent<PlayerManaSystem>();
         subWeaponSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/LeftPanel/SubWeaponSlot");
         artifactSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactSlot");
         subWeaponEquippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();

@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         hpSlider.value = CalcSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
-        hpBarText.text = "HP " + Mathf.Max(0, playerDamageable.Health) + " / " + playerDamageable.MaxHealth;
+        hpBarText.text = "HP: " + Mathf.Max(0, playerDamageable.Health) + " / " + playerDamageable.MaxHealth;
     }
 
     private void OnEnable()
@@ -42,12 +42,12 @@ public class HealthBar : MonoBehaviour
     private void OnPlayerHPChanged(int newHP, int maxHP)
     {
         hpSlider.value = CalcSliderPercentage(newHP, maxHP);
-        hpBarText.text = "HP " + newHP + " / " + maxHP;
+        hpBarText.text = "HP: " + newHP + " / " + maxHP;
     }
 
     private void OnPlayerMaxHPChanged(int HP, int newMaxHP)
     {
         hpSlider.value = CalcSliderPercentage(HP, newMaxHP);
-        hpBarText.text = "HP " + HP + " / " + newMaxHP;
+        hpBarText.text = "HP: " + HP + " / " + newMaxHP;
     }
 }
