@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject subWeaponSlotObject;
     private EquippedSlot subWeaponEquippedSlot;
+    public GameObject accessorySlotObject;
+    private EquippedSlot accessoryEquippedSlot;
     public GameObject artifactSlotObject;
-    private EquippedSlot artifactEquippedSlot;
+    private EquippedSlot artifactFireEquippedSlot;
 
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
@@ -204,7 +206,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             doubleJump = true;
         }
-        else if (context.started && doubleJump && CanMove && IsAlive && !uiManager.openUI && (artifactEquippedSlot.itemName == "Skybound Grimoire" || artifactEquippedSlot.itemName == "Goddess Grace"))
+        else if (context.started && doubleJump && CanMove && IsAlive && !uiManager.openUI && (accessoryEquippedSlot.itemName == "Skybound Grimoire" || accessoryEquippedSlot.itemName == "Goddess Grace"))
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse - 0.5f);
@@ -239,7 +241,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnCast(InputAction.CallbackContext context)
     {
-        if ((playerManaSystem.currentMana >= 20) && !isCastOnCooldown && context.started && !uiManager.openUI)
+        if ((playerManaSystem.currentMana >= 20) && !isCastOnCooldown && context.started && !uiManager.openUI && artifactFireEquippedSlot.itemName == "Emberheart Amulet")
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.castTrigger);
@@ -269,9 +271,11 @@ public class PlayerController : MonoBehaviour
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         playerManaSystem = GetComponent<PlayerManaSystem>();
         subWeaponSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/LeftPanel/SubWeaponSlot");
-        artifactSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactSlot");
+        accessorySlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/AccessorySlot");
+        artifactSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactFireSlot");
         subWeaponEquippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
-        artifactEquippedSlot = artifactSlotObject.GetComponent<EquippedSlot>();
+        accessoryEquippedSlot = accessorySlotObject.GetComponent<EquippedSlot>();
+        artifactFireEquippedSlot = artifactSlotObject.GetComponent<EquippedSlot>();
     }
 
     private void FixedUpdate()
