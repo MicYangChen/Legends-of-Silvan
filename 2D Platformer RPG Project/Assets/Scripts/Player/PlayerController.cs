@@ -226,15 +226,32 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
-            playerManaSystem.UseMana(20);
-        }
-        else if (uiManager.openUI)
-        {
-            Debug.Log("UI is open!");
+            playerManaSystem.UseMana(5);
         }
         else if (!subWeaponEquippedSlot.slotInUse)
         {
             Debug.Log("Player does not have a bow equipped!");
+        }
+    }
+
+    public float castCooldown = 1f;
+    private bool isCastOnCooldown = false;
+    private float castCooldownTimer = 0f;
+
+    public void OnCast(InputAction.CallbackContext context)
+    {
+        if (!isCastOnCooldown && context.started && !uiManager.openUI)
+        {
+            Debug.Log("Cast condition met. Triggering action.");
+            animator.SetTrigger(AnimationStrings.castTrigger);
+            playerManaSystem.UseMana(20);
+
+            isCastOnCooldown = true;
+            castCooldownTimer = castCooldown;
+        }
+        else if (uiManager.openUI)
+        {
+            Debug.Log("UI is open!");
         }
     }
 
@@ -265,5 +282,19 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
         }
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
+    }
+
+    private void Update()
+    {
+        if (isCastOnCooldown)
+        {
+            castCooldownTimer -= Time.deltaTime;
+
+            if (castCooldownTimer <= 0)
+            {
+                // Cooldown is over
+                isCastOnCooldown = false;
+            }
+        }
     }
 }
