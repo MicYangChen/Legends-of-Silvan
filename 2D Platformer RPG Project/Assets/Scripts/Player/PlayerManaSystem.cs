@@ -12,7 +12,7 @@ public class PlayerManaSystem : MonoBehaviour
 
     public Slider manaSlider; // Reference to the UI Mana Slider
 
-    [SerializeField] private int currentMana;
+    public int currentMana;
     private float regenTimer;
     private bool isRegenerating;
 

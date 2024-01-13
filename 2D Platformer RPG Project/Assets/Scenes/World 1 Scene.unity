@@ -2984,11 +2984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &705885628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 199573235503205674, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-  m_PrefabInstance: {fileID: 494529069353718664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &721704268
 GameObject:
   m_ObjectHideFlags: 0
@@ -33111,39 +33106,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1927017770, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
   m_PrefabInstance: {fileID: 494529069353718664}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705885628}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5610c0f1045b38b41857e9fae4c1c276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1927017782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705885628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30eb75a385d35274ebb23381a1ae302e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMana: 100
-  minRegenTime: 1
-  punishingFactor: 2
-  manaSlider: {fileID: 721704270}
-  currentMana: 0
-  acceleration: 10
---- !u!114 &1927017789 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3842269013856942663, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-  m_PrefabInstance: {fileID: 494529069353718664}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705885628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d7b5422feadcf4290949d45a0e66a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1927338756
@@ -42139,6 +42105,10 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 965208245}
+    - target: {fileID: 1927017782, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: manaSlider
+      value: 
+      objectReference: {fileID: 721704270}
     - target: {fileID: 199573235503205674, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -42195,50 +42165,6 @@ PrefabInstance:
       propertyPath: subWeaponSlotObject
       value: 
       objectReference: {fileID: 1412322508}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
-      value: 03f5f7f0-ae09-4f10-87b8-c29c365fd7e1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
-      value: Player/MagicAttack[/Mouse/rightButton]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1927017789}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCast
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[10].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}

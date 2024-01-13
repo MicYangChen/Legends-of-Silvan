@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class FireProjectile : MonoBehaviour
 {
-    private BowShoot projectileFire;
+    private CastFire castFire;
     private PlayerStats playerStats;
 
     public Vector2 moveSpeed = new Vector2(3f, 0);
@@ -14,13 +14,17 @@ public class Projectile : MonoBehaviour
     private Vector2 initialPosition;
 
     Rigidbody2D rb;
+    BoxCollider2D boxCollider;
+    Animator anim;
 
     private bool isCritical;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        projectileFire = GameObject.Find("Player").GetComponentInChildren<BowShoot>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
+        castFire = GameObject.Find("Player").GetComponentInChildren<CastFire>();
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
     }
 
@@ -47,13 +51,13 @@ public class Projectile : MonoBehaviour
         if (damageable != null)
         {
             Vector2 deliveredKnockback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
-            
+
             randomMultiplier = Random.Range(0.75f, 1.25f);
 
             float critRoll = Random.value;
             isCritical = critRoll <= playerStats.critChance;
 
-            int damageDealt = Mathf.RoundToInt(projectileFire.AttackPower * randomMultiplier); // Bow deals R.ATT Damage
+            int damageDealt = Mathf.RoundToInt(castFire.FireMagicPower * randomMultiplier); // Fire cast deals Fire Damage
 
             if (isCritical)
             {
@@ -74,11 +78,21 @@ public class Projectile : MonoBehaviour
                 {
                     CharacterEvents.characterDamaged.Invoke(gameObject, damageDealt);
                 }
-
-                Destroy(gameObject);
+                anim.SetTrigger("explode");
+                StartCoroutine(WaitForAnimation());
             }
             isCritical = false;
         }
     }
-}
 
+    IEnumerator WaitForAnimation()
+    {
+        // Wait until the current state is not playing the "explode" animation
+        while (anim.GetCurrentAnimatorStateInfo(0).IsName("explode"))
+        {
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
+}

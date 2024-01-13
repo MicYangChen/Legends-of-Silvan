@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileFire : MonoBehaviour
+public class CastFire : MonoBehaviour
 {
     private PlayerStats playerStats;
     public Transform launchPoint;
@@ -14,11 +13,11 @@ public class ProjectileFire : MonoBehaviour
         playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
     }
 
-    public int AttackPower
+    public int FireMagicPower
     {
         get
         {
-            return Mathf.RoundToInt(playerStats.strength * playerStats.ranged);
+            return Mathf.RoundToInt(playerStats.strength * 2);
         }
         set
         {
@@ -26,13 +25,13 @@ public class ProjectileFire : MonoBehaviour
         }
     }
 
-    public void FireProjectile()
+    public void CastFireball()
     {
         GameObject projectile = Instantiate(projectilePrefab, launchPoint.position, projectilePrefab.transform.rotation);
 
         float angle = transform.eulerAngles.y;
         Vector3 firingDirection = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
-        
+
         // Vector3 originalScale = projectile.transform.localScale;
 
         projectile.transform.localScale = new Vector3(firingDirection.x * transform.localScale.x > 0 ? 1 : -1,

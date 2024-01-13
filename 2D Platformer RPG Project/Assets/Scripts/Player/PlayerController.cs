@@ -226,7 +226,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Ranged attack condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
-            playerManaSystem.UseMana(5);
         }
         else if (!subWeaponEquippedSlot.slotInUse)
         {
@@ -234,13 +233,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float castCooldown = 1f;
+    public float castCooldown = 0.5f;
     private bool isCastOnCooldown = false;
     private float castCooldownTimer = 0f;
 
     public void OnCast(InputAction.CallbackContext context)
     {
-        if (!isCastOnCooldown && context.started && !uiManager.openUI)
+        if ((playerManaSystem.currentMana >= 20) && !isCastOnCooldown && context.started && !uiManager.openUI)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.castTrigger);

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_CastFire
+  m_Name: Fireball_Explode
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,18 +20,22 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 006c1c67ebd991f4dbb00335e6f027c3, type: 3}
-    - time: 0.14285715
-      value: {fileID: 21300000, guid: cbe517da6e98f984d8c6553d851351fe, type: 3}
-    - time: 0.2857143
-      value: {fileID: 21300000, guid: fc95ede56f75a0a42b3b7ca49d7bbdea, type: 3}
-    - time: 0.42857143
-      value: {fileID: 21300000, guid: 37cbcb86c958cb141870b35fb0fe73e3, type: 3}
+      value: {fileID: 21300000, guid: 9c56ef6f982e8914daf8714d5bcd9cea, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: 10aa3a116ac3b5b48a4baafd59720ea2, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: c7306be4ce3c0a0469c3a9a2a2362408, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: a08cb5e6da786564db16cfaba3ffe0cc, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: c485bf7f98f24494887a0db2d3fa19d9, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 59d6a0740f5fa2d43bace77687889e18, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 7
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,16 +51,18 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 006c1c67ebd991f4dbb00335e6f027c3, type: 3}
-    - {fileID: 21300000, guid: cbe517da6e98f984d8c6553d851351fe, type: 3}
-    - {fileID: 21300000, guid: fc95ede56f75a0a42b3b7ca49d7bbdea, type: 3}
-    - {fileID: 21300000, guid: 37cbcb86c958cb141870b35fb0fe73e3, type: 3}
+    - {fileID: 21300000, guid: 9c56ef6f982e8914daf8714d5bcd9cea, type: 3}
+    - {fileID: 21300000, guid: 10aa3a116ac3b5b48a4baafd59720ea2, type: 3}
+    - {fileID: 21300000, guid: c7306be4ce3c0a0469c3a9a2a2362408, type: 3}
+    - {fileID: 21300000, guid: a08cb5e6da786564db16cfaba3ffe0cc, type: 3}
+    - {fileID: 21300000, guid: c485bf7f98f24494887a0db2d3fa19d9, type: 3}
+    - {fileID: 21300000, guid: 59d6a0740f5fa2d43bace77687889e18, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5714286
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -76,8 +82,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.42857143
-    functionName: CastFireball
+  - time: 0.5
+    functionName: DeActivate
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
