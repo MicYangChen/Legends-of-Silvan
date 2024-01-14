@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneMove : MonoBehaviour
 {
-    [SerializeField] Animator transitionAnim;
-
     // Check the scene build index and move to that specific Scene
     public int sceneBuildIndex;
 
@@ -23,9 +21,7 @@ public class SceneMove : MonoBehaviour
     }
     IEnumerator LoadLevel()
     {
-        transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0);
         SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        transitionAnim.SetTrigger("Start");
     }
 }
