@@ -112,12 +112,13 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         slotName.enabled = true;
 
         // Update Data
+        string itemNameToUnequip = this.itemName;
         this.itemName = "";
         this.itemDescription = "";
 
         for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
         {
-            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+            if (equipmentSOLibrary.equipmentSO[i].itemName == itemNameToUnequip)
             {
                 equipmentSOLibrary.equipmentSO[i].UnEquipItem();
             }
