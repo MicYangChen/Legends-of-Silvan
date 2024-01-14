@@ -47,6 +47,7 @@ public class FireProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damageable damageable = collision.GetComponent<Damageable>();
+        EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
 
         if (damageable != null)
         {
@@ -64,6 +65,8 @@ public class FireProjectile : MonoBehaviour
                 damageDealt *= 2;
                 Debug.Log("Critical Damage!");
             }
+
+            damageDealt = enemyStats.ModifyDamage(damageDealt); // Check for resistances
 
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
             if (gotHit)

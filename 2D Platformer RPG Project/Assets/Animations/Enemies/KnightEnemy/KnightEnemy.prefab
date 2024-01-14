@@ -83,7 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
   attackDamage: 10
   knockback: {x: 3, y: 2}
 --- !u!1 &5454023877989732306
@@ -175,6 +174,7 @@ GameObject:
   - component: {fileID: 2184935983089623654}
   - component: {fileID: 5655223143368998666}
   - component: {fileID: 2937132116002901959}
+  - component: {fileID: 2378064139083595482}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -413,6 +413,19 @@ MonoBehaviour:
   itemDrops: []
   dropChances: []
   experience: 0
+--- !u!114 &2378064139083595482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848862704535749659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fa86c75c71087489ac72aa6231157c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireResistance: 0.2
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
