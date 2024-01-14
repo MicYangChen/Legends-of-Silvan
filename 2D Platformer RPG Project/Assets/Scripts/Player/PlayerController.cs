@@ -272,8 +272,8 @@ public class PlayerController : MonoBehaviour
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         playerManaSystem = GetComponent<PlayerManaSystem>();
         playerArtifacts = GetComponent<PlayerArtifacts>();
-        subWeaponSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/LeftPanel/SubWeaponSlot");
-        accessorySlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/AccessorySlot");
+        subWeaponSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/SubWeaponSlot");
+        accessorySlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/LeftPanel/AccessorySlot");
         subWeaponEquippedSlot = subWeaponSlotObject.GetComponent<EquippedSlot>();
         accessoryEquippedSlot = accessorySlotObject.GetComponent<EquippedSlot>();
     }

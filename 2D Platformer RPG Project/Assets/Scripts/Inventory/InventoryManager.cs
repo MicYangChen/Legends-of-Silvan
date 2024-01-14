@@ -149,6 +149,8 @@ public enum ItemType
     subWeapon,
     weapon,
     accessory,
-    artifact,
+    artifactFire,
+    artifactWind,
+    artifactElectric,
     none,
 };

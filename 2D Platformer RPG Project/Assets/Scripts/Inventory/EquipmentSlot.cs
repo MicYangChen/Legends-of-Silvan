@@ -34,7 +34,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     public GameObject equipmentDescriptionPanel;
 
     // EQUIPPED SLOTS
-    [SerializeField] private EquippedSlot helmetSlot, armorSlot, bootsSlot, subWeaponSlot, weaponSlot, accessorySlot, artifactSlot;
+    [SerializeField] private EquippedSlot helmetSlot, armorSlot, accessorySlot, subWeaponSlot, weaponSlot, artifactFireSlot, artifactWindSlot, artifactElectricSlot;
 
     private void Start()
     {
@@ -145,9 +145,9 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                     armorSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
-            case ItemType.boots:
+            case ItemType.accessory:
                 {
-                    bootsSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    accessorySlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
             case ItemType.subWeapon:
@@ -160,14 +160,19 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                     weaponSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
-            case ItemType.accessory:
+            case ItemType.artifactFire:
                 {
-                    accessorySlot.EquipGear(itemSprite, itemName, itemDescription);
+                    artifactFireSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
-            case ItemType.artifact:
+            case ItemType.artifactWind:
                 {
-                    artifactSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    artifactWindSlot.EquipGear(itemSprite, itemName, itemDescription);
+                    break;
+                }
+            case ItemType.artifactElectric:
+                {
+                    artifactElectricSlot.EquipGear(itemSprite, itemName, itemDescription);
                     break;
                 }
         }
