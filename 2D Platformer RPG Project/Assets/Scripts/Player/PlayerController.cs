@@ -234,9 +234,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float castCooldown = 0.5f;
-    private bool isCastOnCooldown = false;
-    private float castCooldownTimer = 0f;
+    // Fire Attack
+    public float castFireCooldown = 0.5f;
+    private bool isCastFireOnCooldown = false;
+    private float castFireCooldownTimer = 0f;
+
+    // Wind Attack
+    public float castWindCooldown = 0.5f;
+    private bool isCastWindOnCooldown = false;
+    private float castWindCooldownTimer = 0f;
+
+    // Electric Attack
+    public float castElectricCooldown = 1.5f;
+    private bool isCastElectricOnCooldown = false;
+    private float castElectricCooldownTimer = 0f;
 
     public void OnCast(InputAction.CallbackContext context)
     {
@@ -244,32 +255,32 @@ public class PlayerController : MonoBehaviour
         playerArtifacts.CheckFireArtifact();
         playerArtifacts.CheckWindArtifact();
         playerArtifacts.CheckElectricArtifact();
-        if ((playerManaSystem.currentMana >= 20) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.FireArtifact)
+        if ((playerManaSystem.currentMana >= 15) && !isCastFireOnCooldown && context.started && !uiManager.openUI && playerArtifacts.FireArtifact)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.fireAttackTrigger);
-            playerManaSystem.UseMana(20);
+            playerManaSystem.UseMana(15);
 
-            isCastOnCooldown = true;
-            castCooldownTimer = castCooldown;
+            isCastFireOnCooldown = true;
+            castFireCooldownTimer = castFireCooldown;
         }
-        if ((playerManaSystem.currentMana >= 40) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.WindArtifact)
+        if ((playerManaSystem.currentMana >= 20) && !isCastWindOnCooldown && context.started && !uiManager.openUI && playerArtifacts.WindArtifact)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.windAttackTrigger);
-            playerManaSystem.UseMana(40);
+            playerManaSystem.UseMana(20);
 
-            isCastOnCooldown = true;
-            castCooldownTimer = castCooldown;
+            isCastWindOnCooldown = true;
+            castWindCooldownTimer = castWindCooldown;
         }
-        if ((playerManaSystem.currentMana >= 30) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.ElectricArtifact)
+        if ((playerManaSystem.currentMana >= 30) && !isCastElectricOnCooldown && context.started && !uiManager.openUI && playerArtifacts.ElectricArtifact)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.electricAttackTrigger);
             playerManaSystem.UseMana(30);
 
-            isCastOnCooldown = true;
-            castCooldownTimer = castCooldown;
+            isCastElectricOnCooldown = true;
+            castElectricCooldownTimer = castElectricCooldown;
         }
         else if (uiManager.openUI)
         {
@@ -309,14 +320,39 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isCastOnCooldown)
+        // Fire Attack Cooldown
+        if (isCastFireOnCooldown)
         {
-            castCooldownTimer -= Time.deltaTime;
+            castFireCooldownTimer -= Time.deltaTime;
 
-            if (castCooldownTimer <= 0)
+            if (castFireCooldownTimer <= 0)
             {
                 // Cooldown is over
-                isCastOnCooldown = false;
+                isCastFireOnCooldown = false;
+            }
+        }
+
+        // Wind Attack Cooldown
+        if (isCastWindOnCooldown)
+        {
+            castWindCooldownTimer -= Time.deltaTime;
+
+            if (castWindCooldownTimer <= 0)
+            {
+                // Cooldown is over
+                isCastWindOnCooldown = false;
+            }
+        }
+
+        // Electric Attack Cooldown
+        if (isCastElectricOnCooldown)
+        {
+            castElectricCooldownTimer -= Time.deltaTime;
+
+            if (castElectricCooldownTimer <= 0)
+            {
+                // Cooldown is over
+                isCastElectricOnCooldown = false;
             }
         }
     }
