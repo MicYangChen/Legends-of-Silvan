@@ -31546,11 +31546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111102271}
   m_CullTransparentMesh: 1
---- !u!1 &1114665322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 189760986924315785, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
-  m_PrefabInstance: {fileID: 189760988028437987}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1122162875
 GameObject:
   m_ObjectHideFlags: 0
@@ -42445,10 +42440,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3842269013856942663, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: artifactSlotObject
-      value: 
-      objectReference: {fileID: 1114665322}
     - target: {fileID: 3842269013856942663, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
       propertyPath: subWeaponSlotObject
       value: 

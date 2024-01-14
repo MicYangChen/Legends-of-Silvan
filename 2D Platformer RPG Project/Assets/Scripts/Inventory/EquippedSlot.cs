@@ -106,9 +106,14 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 
         inventoryManager.AddItem(itemName, 1, itemSprite, itemDescription, itemType);
 
+        // Update Image
         this.itemSprite = emptySprite;
         slotImage.sprite = this.emptySprite;
         slotName.enabled = true;
+
+        // Update Data
+        this.itemName = "";
+        this.itemDescription = "";
 
         for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
         {
