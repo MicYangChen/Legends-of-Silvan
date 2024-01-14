@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 3787970838281527670}
   - component: {fileID: 1927017781}
   - component: {fileID: 1927017782}
+  - component: {fileID: 6365999098566044865}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subWeaponSlotObject: {fileID: 0}
-  artifactSlotObject: {fileID: 0}
+  accessorySlotObject: {fileID: 0}
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 6
@@ -580,6 +581,21 @@ MonoBehaviour:
   manaSlider: {fileID: 0}
   currentMana: 0
   acceleration: 10
+--- !u!114 &6365999098566044865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199573235503205674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866846574f2d72f4a8b235b4e4b0eed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireArtifactItemNames:
+  - Emberheart Amulet
+  artifactSlotObject: {fileID: 0}
 --- !u!1 &1386680071567737459
 GameObject:
   m_ObjectHideFlags: 0
