@@ -10,31 +10,57 @@ public class PlayerArtifacts : MonoBehaviour
         "Emberheart Amulet"
     };
 
-    /* public bool WindArtifact { get; private set; }
+    public bool WindArtifact { get; private set; }
     public List<string> WindArtifactItemNames = new List<string>
     {
-        "NOT YET DECIDED"
-    }; */
+        "Cyclonic Crest"
+    };
 
-    /* public bool ElectricArtifact { get; private set; }
+    public bool ElectricArtifact { get; private set; }
     public List<string> ElectricArtifactItemNames = new List<string>
     {
-        "NOT YET DECIDED"
-    }; */
+        "Thunderguard Aegis"
+    };
 
-    public GameObject artifactSlotObject;
+    public GameObject artifactFireSlotObject;
     private EquippedSlot artifactFireEquippedSlot;
+
+    public GameObject artifactWindSlotObject;
+    private EquippedSlot artifactWindEquippedSlot;
+
+    public GameObject artifactElectricSlotObject;
+    private EquippedSlot artifactElectricEquippedSlot;
 
     private void Start()
     {
         // Check for Fire Artifact
-        artifactSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactFireSlot");
-        artifactFireEquippedSlot = artifactSlotObject.GetComponent<EquippedSlot>();
+        artifactFireSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactFireSlot");
+        artifactFireEquippedSlot = artifactFireSlotObject.GetComponent<EquippedSlot>();
+
+        // Check for Wind Artifact
+        artifactWindSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactWindSlot");
+        artifactWindEquippedSlot = artifactWindSlotObject.GetComponent<EquippedSlot>();
+
+        // Check for Electric Artifact
+        artifactElectricSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactElectricSlot");
+        artifactElectricEquippedSlot = artifactElectricSlotObject.GetComponent<EquippedSlot>();
     }
 
     // Fire Artifact
     public void CheckFireArtifact()
     {
         FireArtifact = FireArtifactItemNames.Contains(artifactFireEquippedSlot.itemName);
+    }
+
+    // Wind Artifact
+    public void CheckWindArtifact()
+    {
+        WindArtifact = WindArtifactItemNames.Contains(artifactWindEquippedSlot.itemName);
+    }
+
+    // Electric Artifact
+    public void CheckElectricArtifact()
+    {
+        ElectricArtifact = ElectricArtifactItemNames.Contains(artifactElectricEquippedSlot.itemName);
     }
 }

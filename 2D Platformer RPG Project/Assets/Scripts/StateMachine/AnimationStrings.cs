@@ -22,6 +22,8 @@ internal class AnimationStrings
     internal static string lockVelocity = "lockVelocity";
     internal static string attackCooldown = "attackCooldown";
     internal static string rangedAttackTrigger = "rangedAttack";
-    internal static string castTrigger = "cast";
+    internal static string fireAttackTrigger = "fireAttack";
+    internal static string windAttackTrigger = "windAttack";
+    internal static string electricAttackTrigger = "electricAttack";
 }
 

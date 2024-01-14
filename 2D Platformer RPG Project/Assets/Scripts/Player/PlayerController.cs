@@ -242,11 +242,31 @@ public class PlayerController : MonoBehaviour
     {
         // Check if FireArtifact is Equipped 
         playerArtifacts.CheckFireArtifact();
+        playerArtifacts.CheckWindArtifact();
+        playerArtifacts.CheckElectricArtifact();
         if ((playerManaSystem.currentMana >= 20) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.FireArtifact)
         {
             Debug.Log("Cast condition met. Triggering action.");
-            animator.SetTrigger(AnimationStrings.castTrigger);
+            animator.SetTrigger(AnimationStrings.fireAttackTrigger);
             playerManaSystem.UseMana(20);
+
+            isCastOnCooldown = true;
+            castCooldownTimer = castCooldown;
+        }
+        if ((playerManaSystem.currentMana >= 40) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.WindArtifact)
+        {
+            Debug.Log("Cast condition met. Triggering action.");
+            animator.SetTrigger(AnimationStrings.windAttackTrigger);
+            playerManaSystem.UseMana(40);
+
+            isCastOnCooldown = true;
+            castCooldownTimer = castCooldown;
+        }
+        if ((playerManaSystem.currentMana >= 30) && !isCastOnCooldown && context.started && !uiManager.openUI && playerArtifacts.ElectricArtifact)
+        {
+            Debug.Log("Cast condition met. Triggering action.");
+            animator.SetTrigger(AnimationStrings.electricAttackTrigger);
+            playerManaSystem.UseMana(30);
 
             isCastOnCooldown = true;
             castCooldownTimer = castCooldown;

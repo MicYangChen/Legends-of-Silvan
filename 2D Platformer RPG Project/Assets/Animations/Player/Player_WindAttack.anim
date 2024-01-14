@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_CastFire
+  m_Name: Player_WindAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 006c1c67ebd991f4dbb00335e6f027c3, type: 3}
+      value: {fileID: 21300000, guid: 82038a215cfe2314092c0597fedc35ee, type: 3}
     - time: 0.14285715
-      value: {fileID: 21300000, guid: cbe517da6e98f984d8c6553d851351fe, type: 3}
+      value: {fileID: 21300000, guid: 124bed8315fb6094cb12cd68deee1334, type: 3}
     - time: 0.2857143
-      value: {fileID: 21300000, guid: fc95ede56f75a0a42b3b7ca49d7bbdea, type: 3}
+      value: {fileID: 21300000, guid: 2d5595ffe35f1014ba7d7269966c248e, type: 3}
     - time: 0.42857143
-      value: {fileID: 21300000, guid: 37cbcb86c958cb141870b35fb0fe73e3, type: 3}
+      value: {fileID: 21300000, guid: 7cb75c3d7370fbd4c95d2e2576a8d232, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -47,10 +47,10 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 006c1c67ebd991f4dbb00335e6f027c3, type: 3}
-    - {fileID: 21300000, guid: cbe517da6e98f984d8c6553d851351fe, type: 3}
-    - {fileID: 21300000, guid: fc95ede56f75a0a42b3b7ca49d7bbdea, type: 3}
-    - {fileID: 21300000, guid: 37cbcb86c958cb141870b35fb0fe73e3, type: 3}
+    - {fileID: 21300000, guid: 82038a215cfe2314092c0597fedc35ee, type: 3}
+    - {fileID: 21300000, guid: 124bed8315fb6094cb12cd68deee1334, type: 3}
+    - {fileID: 21300000, guid: 2d5595ffe35f1014ba7d7269966c248e, type: 3}
+    - {fileID: 21300000, guid: 7cb75c3d7370fbd4c95d2e2576a8d232, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -75,11 +75,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.42857143
-    functionName: CastFireball
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

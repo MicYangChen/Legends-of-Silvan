@@ -31569,7 +31569,7 @@ GameObject:
   - component: {fileID: 1087221699}
   - component: {fileID: 1087221698}
   m_Layer: 14
-  m_Name: Stormspark Splinter
+  m_Name: Thunderguard Aegis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41619,6 +41619,14 @@ PrefabInstance:
       propertyPath: artifactSlotObject
       value: 
       objectReference: {fileID: 1114665322}
+    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: WindArtifactItemNames.Array.data[0]
+      value: Cyclonic Crest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: ElectricArtifactItemNames.Array.data[0]
+      value: Thunderguard Aegis
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
