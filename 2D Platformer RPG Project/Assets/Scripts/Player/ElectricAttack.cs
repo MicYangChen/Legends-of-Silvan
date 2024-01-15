@@ -22,6 +22,7 @@ public class ElectricAttack : MonoBehaviour
     {
         // See if it can be hit
         Damageable damageable = collision.GetComponent<Damageable>();
+        EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
 
         if (damageable != null)
         {
@@ -39,6 +40,8 @@ public class ElectricAttack : MonoBehaviour
                 damageDealt *= 2;
                 Debug.Log("Critical Damage!");
             }
+
+            damageDealt = enemyStats.ModifyDamage(damageDealt, EnemyStats.DamageType.Electric);
 
             // Hit the target
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);

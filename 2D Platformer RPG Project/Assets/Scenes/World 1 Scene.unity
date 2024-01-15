@@ -850,7 +850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: fireResistance
-      value: 0.2
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: electricResistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2937132116002901959, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: experience
@@ -918,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848862704535749659, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_Name
-      value: RedKnightEnemy
+      value: BigKnightEnemy (Fire Resistant)
       objectReference: {fileID: 0}
     - target: {fileID: 6897061603792513566, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: level
@@ -32416,9 +32420,25 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 635988629}
     m_Modifications:
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.b
+      value: 0.27687788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9322311
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9622642
+      objectReference: {fileID: 0}
     - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: fireResistance
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: electricResistance
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2937132116002901959, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: experience
@@ -32462,7 +32482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5655223143368998666, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: _health
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5655223143368998666, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: expAmount
@@ -32470,7 +32490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848862704535749659, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_Name
-      value: TestKnightEnemy2
+      value: KnightEnemy (Electric Resistant)
       objectReference: {fileID: 0}
     - target: {fileID: 6897061603792513566, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: level
@@ -40862,6 +40882,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 635988629}
     m_Modifications:
+    - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: fireResistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2937132116002901959, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: experience
       value: 10
@@ -40908,7 +40932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848862704535749659, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_Name
-      value: KnightEnemy (2)
+      value: KnightEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6897061603792513566, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: level
@@ -41875,6 +41899,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 635988629}
     m_Modifications:
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.b
+      value: 0.40762556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202005297663393249, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: fireResistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378064139083595482, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
+      propertyPath: windResistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2937132116002901959, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: experience
       value: 10
@@ -41969,7 +42013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5655223143368998666, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: _health
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5655223143368998666, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: expAmount
@@ -41977,7 +42021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5848862704535749659, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_Name
-      value: TestKnightEnemy
+      value: KnightEnemy (Wind Resistant)
       objectReference: {fileID: 0}
     - target: {fileID: 8080813367526392278, guid: cde9e5baab430c341a2b61c3e12e6820, type: 3}
       propertyPath: m_RootOrder

@@ -66,7 +66,7 @@ public class FireProjectile : MonoBehaviour
                 Debug.Log("Critical Damage!");
             }
 
-            damageDealt = enemyStats.ModifyDamage(damageDealt); // Check for resistances
+            damageDealt = enemyStats.ModifyDamage(damageDealt, EnemyStats.DamageType.Fire); // Check for resistances
 
             bool gotHit = damageable.Hit(damageDealt, deliveredKnockback);
             if (gotHit)
