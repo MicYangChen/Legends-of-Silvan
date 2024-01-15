@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerManaSystem : MonoBehaviour
 {
+    PlayerArtifacts playerArtifacts;
+
     public int maxMana = 100;
     public float minRegenTime = 1.0f;
     public float punishingFactor = 2.0f;
@@ -18,8 +20,12 @@ public class PlayerManaSystem : MonoBehaviour
 
     public float acceleration = 10f;
 
+    Color endingColor = Color.black;
+
     void Start()
     {
+        playerArtifacts = GetComponent<PlayerArtifacts>();
+
         currentMana = maxMana;
         regenTimer = 1.0f;
         isRegenerating = false;
@@ -95,15 +101,54 @@ public class PlayerManaSystem : MonoBehaviour
         {
             float manaPercentage = (float)currentMana / maxMana;
 
-            // Hexadecimal 0068FF RGB values (0, 104, 255)
-            Color startingColor = new Color(0, 104 / 255f, 255 / 255f);
+            if (playerArtifacts.fireArtifactInUse)
+            {
+                // Hexadecimal Color FF3200
+                Color startingColor = new Color(1f, 50f / 255f, 0);
 
-            Color lerpedColor = Color.Lerp(startingColor, Color.red, 1.0f - manaPercentage);
+                Color lerpedColor = Color.Lerp(startingColor, endingColor, 1.0f - manaPercentage);
 
-            // Modify the slider's colors property
-            var colors = manaSlider.colors;
-            colors.normalColor = lerpedColor;
-            manaSlider.colors = colors;
+                // Modify the slider's colors property
+                var colors = manaSlider.colors;
+                colors.normalColor = lerpedColor;
+                manaSlider.colors = colors;
+            }
+            else if (playerArtifacts.windArtifactInUse)
+            {
+                // Hexadecimal Color 00FF20
+                Color startingColor = new Color(0f, 1f, 32f / 255f);
+
+                Color lerpedColor = Color.Lerp(startingColor, endingColor, 1.0f - manaPercentage);
+
+                // Modify the slider's colors property
+                var colors = manaSlider.colors;
+                colors.normalColor = lerpedColor;
+                manaSlider.colors = colors;
+            }
+            else if (playerArtifacts.electricArtifactInUse)
+            {
+                // Hexadecimal Color F5FF00
+                Color startingColor = new Color(245f / 255f, 1f, 0);
+
+                Color lerpedColor = Color.Lerp(startingColor, endingColor, 1.0f - manaPercentage);
+
+                // Modify the slider's colors property
+                var colors = manaSlider.colors;
+                colors.normalColor = lerpedColor;
+                manaSlider.colors = colors;
+            }
+            else
+            {
+                // Hexademical Color 32223C
+                Color startingColor = new Color(50f / 255f, 34f / 255f, 60f / 255f);
+
+                Color lerpedColor = Color.Lerp(startingColor, endingColor, 1.0f - manaPercentage);
+
+                // Modify the slider's colors property
+                var colors = manaSlider.colors;
+                colors.normalColor = lerpedColor;
+                manaSlider.colors = colors;
+            }
 
             // Set the slider value
             manaSlider.value = manaPercentage;

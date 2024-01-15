@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerArtifacts : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class PlayerArtifacts : MonoBehaviour
     public GameObject artifactElectricSlotObject;
     private EquippedSlot artifactElectricEquippedSlot;
 
+    public GameObject elementColor;
+    public RawImage elementColorToChange;
+    Color endingColor = Color.black;
+
     public bool fireArtifactInUse = false;
     public bool windArtifactInUse = false;
     public bool electricArtifactInUse = false;
@@ -52,6 +57,9 @@ public class PlayerArtifacts : MonoBehaviour
         // Check for Electric Artifact
         artifactElectricSlotObject = GameObject.Find("----------UI----------/InventoryCanvas/EquipmentMenu/PlayerEquipmentPanel/PlayerEquipmentPanel/RightPanel/ArtifactElectricSlot");
         artifactElectricEquippedSlot = artifactElectricSlotObject.GetComponent<EquippedSlot>();
+
+        elementColor = GameObject.Find("----------UI----------/GameCanvas/PlayerUI/PlayerHPMPExpUI/ElementColor");
+        elementColorToChange = elementColor.GetComponent<RawImage>();
     }
 
     // Fire Artifact
@@ -83,6 +91,10 @@ public class PlayerArtifacts : MonoBehaviour
                 windArtifactInUse = false;
                 electricArtifactInUse = false;
                 Debug.Log("Switched to Fire Artifact");
+                // Hexadecimal Color FF3200
+                var fireColor = new Color(1f, 50f / 255f, 0);
+                var lerpedColor = Color.Lerp(fireColor, endingColor, 0.05f);
+                elementColorToChange.color = lerpedColor;
             }
             else
             {
@@ -103,6 +115,11 @@ public class PlayerArtifacts : MonoBehaviour
                 windArtifactInUse = true;
                 electricArtifactInUse = false;
                 Debug.Log("Switched to Wind Artifact");
+                // Hexadecimal Color 00FF20
+                var windColor = new Color(0f, 1f, 32f / 255f);
+                var lerpedColor = Color.Lerp(windColor, endingColor, 0.05f);
+                elementColorToChange.color = lerpedColor;
+
             }
             else
             {
@@ -123,6 +140,10 @@ public class PlayerArtifacts : MonoBehaviour
                 windArtifactInUse = false;
                 electricArtifactInUse = true;
                 Debug.Log("Switched to Electric Artifact");
+                // Hexadecimal Color F5FF00
+                var electricColor = new Color(245f / 255f, 1f, 0);
+                var lerpedColor = Color.Lerp(electricColor, endingColor, 0.05f);
+                elementColorToChange.color = lerpedColor;
             }
             else
             {
