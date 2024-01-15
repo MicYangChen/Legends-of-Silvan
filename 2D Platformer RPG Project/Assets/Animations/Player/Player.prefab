@@ -50,8 +50,10 @@ Transform:
   - {fileID: 2388695103398511799}
   - {fileID: 3786891854540816888}
   - {fileID: 9159925283789512355}
+  - {fileID: 765731811222025132}
+  - {fileID: 8406228666687433764}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2223829362053832361
 SpriteRenderer:
@@ -458,6 +460,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 03f5f7f0-ae09-4f10-87b8-c29c365fd7e1
     m_ActionName: Player/MagicAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6365999098566044865}
+        m_TargetAssemblyTypeName: PlayerArtifacts, Assembly-CSharp
+        m_MethodName: SwitchToFireArtifact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c43c76fe-8812-41df-a9a6-753a36ff53b2
+    m_ActionName: Player/SwitchToFireArtifact[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6365999098566044865}
+        m_TargetAssemblyTypeName: PlayerArtifacts, Assembly-CSharp
+        m_MethodName: SwitchToWindArtifact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 47882aa7-6617-49c0-a896-485a24a03a75
+    m_ActionName: Player/SwitchToWindArtifact[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6365999098566044865}
+        m_TargetAssemblyTypeName: PlayerArtifacts, Assembly-CSharp
+        m_MethodName: SwitchToElectricArtifact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c6e6bfc1-10f7-47e8-9614-68d0095648d8
+    m_ActionName: Player/SwitchToElectricArtifact[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -604,6 +654,96 @@ MonoBehaviour:
   artifactFireSlotObject: {fileID: 0}
   artifactWindSlotObject: {fileID: 0}
   artifactElectricSlotObject: {fileID: 0}
+  elementColor: {fileID: 0}
+  elementColorToChange: {fileID: 0}
+  fireArtifactInUse: 0
+  windArtifactInUse: 0
+  electricArtifactInUse: 0
+--- !u!1 &1218956459918036258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765731811222025132}
+  - component: {fileID: 4424742570539987327}
+  - component: {fileID: 4203039697535840547}
+  m_Layer: 9
+  m_Name: WindAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &765731811222025132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218956459918036258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3787402140742660671}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4424742570539987327
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218956459918036258}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.29389837, y: 0.8176972}
+      - {x: -0.7951093, y: 1.0266513}
+      - {x: -1.7768149, y: 0.99316925}
+      - {x: -2.321398, y: 0.8824541}
+      - {x: -2.4693196, y: 0.6463242}
+      - {x: -2.4889696, y: 0.17459643}
+      - {x: -2.40876, y: -0.3564528}
+      - {x: -2.1039267, y: -0.586149}
+      - {x: -1.1944966, y: -0.8502626}
+      - {x: -0.32143164, y: -0.88389045}
+      - {x: 0.48332965, y: -0.6893839}
+      - {x: 0.504281, y: 0.4376375}
+  m_UseDelaunayMesh: 0
+--- !u!114 &4203039697535840547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218956459918036258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chainedAttackModifier: 1
+  knockback: {x: 1, y: 1}
 --- !u!1 &1386680071567737459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159925283789512355}
   m_Layer: 7
-  m_Name: Cast
+  m_Name: FireAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1100,3 +1240,86 @@ Transform:
   m_Father: {fileID: 3787402140742660671}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9223100694851052045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8406228666687433764}
+  - component: {fileID: 3291338519103103043}
+  - component: {fileID: 5893844045053942015}
+  m_Layer: 9
+  m_Name: ElectricAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8406228666687433764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223100694851052045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3787402140742660671}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &3291338519103103043
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223100694851052045}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.1307604, y: 0.33450747}
+      - {x: -0.9378997, y: 0.29042435}
+      - {x: -1.5833632, y: 0.13055277}
+      - {x: -1.7946012, y: -0.076201186}
+      - {x: -1.1756747, y: -0.4297117}
+      - {x: -0.77534145, y: -0.679581}
+      - {x: -0.16776234, y: -0.8915739}
+      - {x: 0.4634745, y: -0.77667344}
+      - {x: 0.78756034, y: -0.5179826}
+      - {x: 0.572398, y: -0.09881948}
+  m_UseDelaunayMesh: 0
+--- !u!114 &5893844045053942015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223100694851052045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chainedAttackModifier: 1
+  knockback: {x: 1, y: 1}
