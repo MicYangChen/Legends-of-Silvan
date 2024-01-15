@@ -330,7 +330,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c25f951bef4ef4a479d276aee64ddcab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84477d5660722174c9c9121f51fbf73d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2278,7 +2278,7 @@ GameObject:
   - component: {fileID: 401382709}
   - component: {fileID: 401382708}
   m_Layer: 14
-  m_Name: Emberheart Amulet
+  m_Name: Emberheart Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2325,9 +2325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b327956bceed6f248a64b1e132185115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Emberheart Amulet
+  itemName: Emberheart Staff
   quantity: 1
-  sprite: {fileID: 21300000, guid: c25f951bef4ef4a479d276aee64ddcab, type: 3}
+  sprite: {fileID: 21300000, guid: 84477d5660722174c9c9121f51fbf73d, type: 3}
   itemDescription: An ancient artifact brimming with the power of fire. (Grants the
     player the ability to cast fireballs)
   itemType: 8
@@ -31745,11 +31745,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111102271}
   m_CullTransparentMesh: 1
---- !u!1 &1114665322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 189760986924315785, guid: 660edea3c814cd64783f9e9277329f11, type: 3}
-  m_PrefabInstance: {fileID: 189760988028437987}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1122162875
 GameObject:
   m_ObjectHideFlags: 0
@@ -33708,6 +33703,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5610c0f1045b38b41857e9fae4c1c276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1927017772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+  m_PrefabInstance: {fileID: 494529069353718664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866846574f2d72f4a8b235b4e4b0eed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1927338756
@@ -41615,17 +41621,117 @@ PrefabInstance:
       propertyPath: subWeaponSlotObject
       value: 
       objectReference: {fileID: 1412322508}
-    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: artifactSlotObject
-      value: 
-      objectReference: {fileID: 1114665322}
-    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: WindArtifactItemNames.Array.data[0]
-      value: Cyclonic Crest
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
-      propertyPath: ElectricArtifactItemNames.Array.data[0]
-      value: Thunderguard Aegis
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: c43c76fe-8812-41df-a9a6-753a36ff53b2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: 47882aa7-6617-49c0-a896-485a24a03a75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: c6e6bfc1-10f7-47e8-9614-68d0095648d8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: Player/SwitchToFireArtifact[/Keyboard/1]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Player/SwitchToWindArtifact[/Keyboard/2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/SwitchToElectricArtifact[/Keyboard/3]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1927017772}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1927017772}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1927017772}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToFireArtifact
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToWindArtifact
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToElectricArtifact
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerArtifacts, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerArtifacts, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerArtifacts, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153008356214913847, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

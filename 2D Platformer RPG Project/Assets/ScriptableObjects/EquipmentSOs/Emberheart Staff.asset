@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a84fb13dd35b6434087d5d4c04dd42b5, type: 3}
-  m_Name: Emberheart Amulet
+  m_Name: Emberheart Staff
   m_EditorClassIdentifier: 
-  itemName: Emberheart Amulet
+  itemName: Emberheart Staff
   health: 10
   strength: 5
   defense: 5
   critChance: 0
   ranged: 0
-  itemSprite: {fileID: 21300000, guid: c25f951bef4ef4a479d276aee64ddcab, type: 3}
+  itemSprite: {fileID: 21300000, guid: 84477d5660722174c9c9121f51fbf73d, type: 3}

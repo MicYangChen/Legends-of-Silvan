@@ -251,11 +251,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnCast(InputAction.CallbackContext context)
     {
-        // Check if FireArtifact is Equipped 
-        playerArtifacts.CheckFireArtifact();
-        playerArtifacts.CheckWindArtifact();
-        playerArtifacts.CheckElectricArtifact();
-        if ((playerManaSystem.currentMana >= 15) && !isCastFireOnCooldown && context.started && !uiManager.openUI && playerArtifacts.FireArtifact)
+        if ((playerManaSystem.currentMana >= 15) && !isCastFireOnCooldown && context.started && !uiManager.openUI && playerArtifacts.fireArtifactInUse)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.fireAttackTrigger);
@@ -264,7 +260,7 @@ public class PlayerController : MonoBehaviour
             isCastFireOnCooldown = true;
             castFireCooldownTimer = castFireCooldown;
         }
-        if ((playerManaSystem.currentMana >= 20) && !isCastWindOnCooldown && context.started && !uiManager.openUI && playerArtifacts.WindArtifact)
+        if ((playerManaSystem.currentMana >= 20) && !isCastWindOnCooldown && context.started && !uiManager.openUI && playerArtifacts.windArtifactInUse)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.windAttackTrigger);
@@ -273,7 +269,7 @@ public class PlayerController : MonoBehaviour
             isCastWindOnCooldown = true;
             castWindCooldownTimer = castWindCooldown;
         }
-        if ((playerManaSystem.currentMana >= 30) && !isCastElectricOnCooldown && context.started && !uiManager.openUI && playerArtifacts.ElectricArtifact)
+        if ((playerManaSystem.currentMana >= 30) && !isCastElectricOnCooldown && context.started && !uiManager.openUI && playerArtifacts.electricArtifactInUse)
         {
             Debug.Log("Cast condition met. Triggering action.");
             animator.SetTrigger(AnimationStrings.electricAttackTrigger);

@@ -314,7 +314,9 @@ MonoBehaviour:
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
-  castCooldown: 0.5
+  castFireCooldown: 0.5
+  castWindCooldown: 0.5
+  castElectricCooldown: 1.5
 --- !u!114 &4153008356214913847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,8 +596,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireArtifactItemNames:
-  - Emberheart Amulet
-  artifactSlotObject: {fileID: 0}
+  - Emberheart Staff
+  WindArtifactItemNames:
+  - Cyclonic Crest
+  ElectricArtifactItemNames:
+  - Thunderguard Aegis
+  artifactFireSlotObject: {fileID: 0}
+  artifactWindSlotObject: {fileID: 0}
+  artifactElectricSlotObject: {fileID: 0}
 --- !u!1 &1386680071567737459
 GameObject:
   m_ObjectHideFlags: 0
