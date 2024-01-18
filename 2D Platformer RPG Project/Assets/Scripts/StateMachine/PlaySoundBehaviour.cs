@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PlaySoundBehaviour : StateMachineBehaviour
 
     public float playDelay = 0.25f;
     private float timeSinceEntered = 0f;
-    private bool hasDelayedsoundPlayed = false;
+    private bool hasDelayedSoundPlayed = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,20 +21,20 @@ public class PlaySoundBehaviour : StateMachineBehaviour
             AudioSource.PlayClipAtPoint(soundToPlay, animator.gameObject.transform.position, volume);
         }
         timeSinceEntered = 0f;
-        hasDelayedsoundPlayed = false;
+        hasDelayedSoundPlayed = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (playAfterDelay && !hasDelayedsoundPlayed)
+        if (playAfterDelay && !hasDelayedSoundPlayed)
         {
             timeSinceEntered += Time.deltaTime;
 
             if (timeSinceEntered > playDelay)
             {
                 AudioSource.PlayClipAtPoint(soundToPlay, animator.gameObject.transform.position, volume);
-                hasDelayedsoundPlayed = true;
+                hasDelayedSoundPlayed = true;
             }
         }
     }

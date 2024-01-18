@@ -53,7 +53,7 @@ Transform:
   - {fileID: 765731811222025132}
   - {fileID: 8406228666687433764}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2223829362053832361
 SpriteRenderer:
@@ -529,7 +529,7 @@ MonoBehaviour:
   isInvincible: 0
   _maxHealth: 50
   _health: 50
-  invincibilityTime: 1
+  invincibilityTime: 0.8
   damageableHit:
     m_PersistentCalls:
       m_Calls:
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866846574f2d72f4a8b235b4e4b0eed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
+  soundToPlay: {fileID: 8300000, guid: bacdda74ece0484498826e077c6272a8, type: 3}
   volume: 1
   FireArtifactItemNames:
   - Emberheart Staff
