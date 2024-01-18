@@ -10,6 +10,11 @@ public class Interactable : MonoBehaviour
     public UnityEvent interactAction;
     public GameObject pressE;
 
+    private void Start()
+    {
+        pressE.SetActive(false);
+    }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.started && isInRange)
