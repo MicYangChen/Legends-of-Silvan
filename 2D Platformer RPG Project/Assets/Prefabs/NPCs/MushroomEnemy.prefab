@@ -265,7 +265,7 @@ Transform:
   - {fileID: 6673571321172536837}
   - {fileID: 6673571321794846862}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6673571321931947654
 SpriteRenderer:
@@ -423,9 +423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isAlive: 1
   isInvincible: 0
-  _maxHealth: 100
-  _health: 100
-  invincibilityTime: 1
+  _maxHealth: 150
+  _health: 150
+  invincibilityTime: 0.15
   damageableHit:
     m_PersistentCalls:
       m_Calls: []

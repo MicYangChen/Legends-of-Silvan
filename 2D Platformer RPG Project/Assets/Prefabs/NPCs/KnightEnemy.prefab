@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584252163488298978}
   - component: {fileID: 262634068901750735}
-  - component: {fileID: 2337459001087451718}
+  - component: {fileID: 6897061603792513566}
   m_Layer: 10
   m_Name: SwordAttack
   m_TagString: Untagged
@@ -62,16 +62,16 @@ PolygonCollider2D:
       - {x: 0.018374443, y: 1.3640609}
       - {x: -0.5402651, y: 1.4094104}
       - {x: -1.082367, y: 1.4355252}
-      - {x: -1.8310878, y: 1.0276003}
-      - {x: -1.4006088, y: 0.7993409}
-      - {x: -0.8687184, y: 0.32239133}
-      - {x: -0.7725402, y: -0.18309176}
-      - {x: -1.1889815, y: -0.57219553}
+      - {x: -2.2797382, y: 0.98273563}
+      - {x: -2.2754762, y: 0.61988133}
+      - {x: -2.1922367, y: 0.2102297}
+      - {x: -1.8941652, y: -0.29525435}
+      - {x: -1.4581718, y: -0.6843581}
       - {x: 0.51817155, y: -1.0291857}
       - {x: 0.74946904, y: -0.82296515}
       - {x: 0.8232615, y: 0.1907835}
   m_UseDelaunayMesh: 0
---- !u!114 &2337459001087451718
+--- !u!114 &6897061603792513566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707347174927165056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fb23202b808494a962c7c1893b05dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
@@ -173,6 +173,8 @@ GameObject:
   - component: {fileID: 485017167363391472}
   - component: {fileID: 2184935983089623654}
   - component: {fileID: 5655223143368998666}
+  - component: {fileID: 2937132116002901959}
+  - component: {fileID: 2378064139083595482}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Untagged
@@ -357,6 +359,7 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+  IsPlayer: 0
 --- !u!114 &5655223143368998666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +376,7 @@ MonoBehaviour:
   isInvincible: 0
   _maxHealth: 100
   _health: 100
-  invincibilityTime: 0.15
+  invincibilityTime: 0.1
   damageableHit:
     m_PersistentCalls:
       m_Calls:
@@ -389,6 +392,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2937132116002901959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848862704535749659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7a9501c7e943e4ea02ed7f12acf407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDrops: []
+  dropChances: []
+  experience: 0
+--- !u!114 &2378064139083595482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848862704535749659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fa86c75c71087489ac72aa6231157c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireResistance: 0.2
+  windResistance: 0
+  electricResistance: 0
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
