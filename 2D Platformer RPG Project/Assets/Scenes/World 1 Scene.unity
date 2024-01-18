@@ -33826,7 +33826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  knockback: {x: 3, y: 1}
+  knockback: {x: 4, y: 2}
 --- !u!60 &1537726310
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -44733,6 +44733,14 @@ PrefabInstance:
       propertyPath: _health
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 4128593700867006620, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
+      propertyPath: knockback.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128593700867006620, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
+      propertyPath: knockback.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4176448627435763568, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
       propertyPath: m_Name
       value: FlyingEye
@@ -44748,6 +44756,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 207824808}
     m_Modifications:
+    - target: {fileID: 6673571321172536836, guid: c82a7eeea91245a4db4e033c153ac4b6, type: 3}
+      propertyPath: knockback.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673571321172536836, guid: c82a7eeea91245a4db4e033c153ac4b6, type: 3}
+      propertyPath: knockback.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6673571321931947650, guid: c82a7eeea91245a4db4e033c153ac4b6, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy
