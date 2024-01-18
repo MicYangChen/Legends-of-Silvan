@@ -376,7 +376,7 @@ MonoBehaviour:
   isInvincible: 0
   _maxHealth: 100
   _health: 100
-  invincibilityTime: 0.15
+  invincibilityTime: 0.1
   damageableHit:
     m_PersistentCalls:
       m_Calls:
@@ -426,6 +426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireResistance: 0.2
+  windResistance: 0
+  electricResistance: 0
 --- !u!1 &6323043582573603049
 GameObject:
   m_ObjectHideFlags: 0
