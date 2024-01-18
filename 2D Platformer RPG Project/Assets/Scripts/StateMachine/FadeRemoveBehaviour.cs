@@ -9,7 +9,9 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
     EnemyKill enemyKillScript;
 
     public float fadeTime = 1.5f;
+    public float fadeDelay = 0.0f;
     private float timeElapsed = 0f;
+    private float fadeDelayElapsed = 0f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,25 +26,32 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timeElapsed += Time.deltaTime;
-
-        float newAlpha = startColor.a * (1 - (timeElapsed / fadeTime));
-
-        spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
-
-
-        if(timeElapsed > fadeTime)
+        if (fadeDelay > fadeDelayElapsed)
         {
-            EnemyKill enemyKillScript = animator.GetComponent<EnemyKill>();
+            fadeDelayElapsed += Time.deltaTime;
+        }
+        else
+        {
+            timeElapsed += Time.deltaTime;
 
-            if (enemyKillScript != null)
+            float newAlpha = startColor.a * (1 - (timeElapsed / fadeTime));
+
+            spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
+
+
+            if (timeElapsed > fadeTime)
             {
-                enemyKillScript.DestroyEnemy();
-                enemyKillScript.ItemDrop();
-            }
-            else
-            {
-                Debug.LogError("EnemyKill script not found on the enemy GameObject.");
+                EnemyKill enemyKillScript = animator.GetComponent<EnemyKill>();
+
+                if (enemyKillScript != null)
+                {
+                    enemyKillScript.DestroyEnemy();
+                    enemyKillScript.ItemDrop();
+                }
+                else
+                {
+                    Debug.LogError("EnemyKill script not found on the enemy GameObject.");
+                }
             }
         }
     }

@@ -21,7 +21,7 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, int> maxHealthChanged;
 
 
-    private bool IsAlive
+    public bool IsAlive
     {
         get
         {
