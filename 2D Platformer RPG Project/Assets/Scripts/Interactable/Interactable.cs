@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
 {
     public bool isInRange;
     public UnityEvent interactAction;
+    public GameObject pressE;
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -26,6 +27,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            pressE.SetActive(true);
             Debug.Log("Player is now in range.");
         }
     }
@@ -35,6 +37,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
+            pressE.SetActive(false);
             Debug.Log("Player is no longer in range.");
         }
     }

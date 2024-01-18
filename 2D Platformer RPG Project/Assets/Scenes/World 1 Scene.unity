@@ -1734,11 +1734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637217705507339669, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5637217705507339669, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5637217705507339669, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2778,6 +2778,14 @@ PrefabInstance:
     - target: {fileID: 3414863554457203293, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5067784814163903196, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_Name
@@ -32439,17 +32447,25 @@ PrefabInstance:
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.27
+      objectReference: {fileID: 0}
     - target: {fileID: 5067784814163903196, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_Name
       value: InteractableCircle
       objectReference: {fileID: 0}
     - target: {fileID: 5344194406418729658, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_Radius
-      value: 1.8231702
+      value: 1.4761007
       objectReference: {fileID: 0}
     - target: {fileID: 5344194406418729658, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_Offset.x
-      value: 1.3231702
+      value: 0.029547453
       objectReference: {fileID: 0}
     - target: {fileID: 5344194406418729658, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_IsTrigger
@@ -32461,7 +32477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637217705507339669, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.36
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 5637217705507339669, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33424,7 +33440,7 @@ MonoBehaviour:
   npcNameText: {fileID: 1558559958}
   npcDialogue: {fileID: 1787467225}
   npcImage: {fileID: 1238429286}
-  npcSprite: {fileID: 0}
+  npcSprite: {fileID: 1274384406, guid: f49a8f271c66cef4ea78bef5116c03d0, type: 3}
   npcName: Celestis
   dialogue:
   - Hello! I am a wise wizard.
@@ -43295,6 +43311,14 @@ PrefabInstance:
     - target: {fileID: 3414863554457203293, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165308520344275519, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5067784814163903196, guid: 2602e26e93690ad4591c9b9ea6f8b366, type: 3}
       propertyPath: m_Name
