@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PlayerArtifacts : MonoBehaviour
 {
     UIManager uiManager;
+    public AudioClip soundToPlay;
+    public float volume = 1f;
+
     public bool FireArtifact { get; private set; }
     public List<string> FireArtifactItemNames = new List<string>
     {
@@ -95,6 +99,7 @@ public class PlayerArtifacts : MonoBehaviour
                 var fireColor = new Color(1f, 50f / 255f, 0);
                 var lerpedColor = Color.Lerp(fireColor, endingColor, 0.05f);
                 elementColorToChange.color = lerpedColor;
+                AudioSource.PlayClipAtPoint(soundToPlay, gameObject.transform.position, volume);
             }
             else
             {
@@ -119,7 +124,7 @@ public class PlayerArtifacts : MonoBehaviour
                 var windColor = new Color(0f, 1f, 32f / 255f);
                 var lerpedColor = Color.Lerp(windColor, endingColor, 0.05f);
                 elementColorToChange.color = lerpedColor;
-
+                AudioSource.PlayClipAtPoint(soundToPlay, gameObject.transform.position, volume);
             }
             else
             {
@@ -144,6 +149,7 @@ public class PlayerArtifacts : MonoBehaviour
                 var electricColor = new Color(245f / 255f, 1f, 0);
                 var lerpedColor = Color.Lerp(electricColor, endingColor, 0.05f);
                 elementColorToChange.color = lerpedColor;
+                AudioSource.PlayClipAtPoint(soundToPlay, gameObject.transform.position, volume);
             }
             else
             {

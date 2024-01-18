@@ -43205,6 +43205,10 @@ PrefabInstance:
       propertyPath: subWeaponSlotObject
       value: 
       objectReference: {fileID: 1412322508}
+    - target: {fileID: 6365999098566044865, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}
+      propertyPath: soundToPlay
+      value: 
+      objectReference: {fileID: 8300000, guid: bacdda74ece0484498826e077c6272a8, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3ca4c6d49948d419fca272c2849bfc, type: 3}

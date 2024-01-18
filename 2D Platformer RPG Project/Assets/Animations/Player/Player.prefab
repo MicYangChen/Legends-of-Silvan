@@ -645,6 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866846574f2d72f4a8b235b4e4b0eed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundToPlay: {fileID: 0}
+  volume: 1
   FireArtifactItemNames:
   - Emberheart Staff
   WindArtifactItemNames:
