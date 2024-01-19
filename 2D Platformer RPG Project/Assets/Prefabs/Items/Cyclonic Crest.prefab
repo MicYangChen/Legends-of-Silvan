@@ -98,8 +98,8 @@ MonoBehaviour:
   itemName: Cyclonic Crest
   quantity: 1
   sprite: {fileID: 21300000, guid: 006d579ba4d32b84c9e824dd4db2bdf2, type: 3}
-  itemDescription: An ancient artifact brimming with the power of wind. (Functions
-    not yet implemented)
+  itemDescription: An ancient artifact brimming with the power of wind. (Grants the
+    player the ability 'Cyclone')
   itemType: 9
 --- !u!114 &4391997699776638336
 MonoBehaviour:

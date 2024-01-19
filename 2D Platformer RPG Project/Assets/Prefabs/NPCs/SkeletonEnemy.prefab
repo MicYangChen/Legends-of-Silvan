@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 50
   knockback: {x: 1.5, y: 0.5}
 --- !u!1 &1258561777031310989
 GameObject:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 70
   knockback: {x: 4, y: 2}
 --- !u!1 &1258561777283083192
 GameObject:
@@ -285,7 +285,7 @@ Transform:
   - {fileID: 1258561777031310986}
   - {fileID: 1258561778358435672}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1258561777346559947
 SpriteRenderer:
@@ -443,8 +443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isAlive: 1
   isInvincible: 0
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 200
+  _health: 200
   invincibilityTime: 0.15
   damageableHit:
     m_PersistentCalls:
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrops: []
   dropChances: []
-  experience: 10
+  experience: 50
 --- !u!114 &1258561777346559944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fa86c75c71087489ac72aa6231157c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireResistance: 0
+  fireResistance: 0.5
   windResistance: 0
   electricResistance: 0
 --- !u!1 &1258561778358435675

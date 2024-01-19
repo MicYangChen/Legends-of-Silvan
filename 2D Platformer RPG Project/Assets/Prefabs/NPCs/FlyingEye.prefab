@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 8
+  attackDamage: 45
   knockback: {x: 2, y: 1}
 --- !u!1 &4176448627435763568
 GameObject:
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isAlive: 1
   isInvincible: 0
-  _maxHealth: 80
-  _health: 80
+  _maxHealth: 90
+  _health: 90
   invincibilityTime: 0.2
   damageableHit:
     m_PersistentCalls:
@@ -251,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fa86c75c71087489ac72aa6231157c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireResistance: 0
-  windResistance: 0
-  electricResistance: 0
+  fireResistance: 0.5
+  windResistance: -0.2
+  electricResistance: -0.5
 --- !u!114 &1328537783226597799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,11 @@ MonoBehaviour:
   flightSpeed: 3
   waypointReachedDistance: 0.1
   biteDetectionZone: {fileID: 5980782547926851524}
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _hasTarget: 0
 --- !u!114 &8121528302143281484
 MonoBehaviour:
@@ -285,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrops: []
   dropChances: []
-  experience: 50
+  experience: 18
 --- !u!1 &6891728041317297358
 GameObject:
   m_ObjectHideFlags: 0

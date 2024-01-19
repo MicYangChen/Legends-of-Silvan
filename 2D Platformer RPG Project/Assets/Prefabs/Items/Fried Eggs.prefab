@@ -182,7 +182,7 @@ MonoBehaviour:
   itemName: Fried Eggs
   quantity: 1
   sprite: {fileID: 21300000, guid: 9eaa6d95a1d94ed41866b52732c3f08b, type: 3}
-  itemDescription: Delicious looking eggs. Also smells wonderful!
+  itemDescription: Fried eggs, the food eaten by knights. Heals for 10 HP.
   itemType: 0
 --- !u!114 &3447290410919072490
 MonoBehaviour:

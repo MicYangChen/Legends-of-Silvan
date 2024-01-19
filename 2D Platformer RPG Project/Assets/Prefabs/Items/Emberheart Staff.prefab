@@ -99,7 +99,7 @@ MonoBehaviour:
   quantity: 1
   sprite: {fileID: 21300000, guid: 84477d5660722174c9c9121f51fbf73d, type: 3}
   itemDescription: An ancient artifact brimming with the power of fire. (Grants the
-    player the ability to cast fireballs)
+    player the ability to cast 'Fireball')
   itemType: 8
 --- !u!114 &835859144175084031
 MonoBehaviour:

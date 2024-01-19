@@ -201,10 +201,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 310932624410079147}
     m_Modifications:
     - target: {fileID: 1328537783226597799, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
-      propertyPath: waypoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328537783226597799, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 310932625869154578}
@@ -263,18 +259,6 @@ PrefabInstance:
     - target: {fileID: 1835237414962594894, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2396948287555514284, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
-      propertyPath: _health
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128593700867006620, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
-      propertyPath: knockback.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128593700867006620, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
-      propertyPath: knockback.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4176448627435763568, guid: 72fb049b9bacb3f4395a486ec607c1f4, type: 3}
       propertyPath: m_Name

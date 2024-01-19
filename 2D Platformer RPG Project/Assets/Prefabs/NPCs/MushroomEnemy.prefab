@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36181a7217b6ff2418bd069ef9f3e0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
-  knockback: {x: 2, y: 1}
+  attackDamage: 40
+  knockback: {x: 8, y: 3}
 --- !u!1 &6673571321794846857
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrops: []
   dropChances: []
-  experience: 0
+  experience: 20
 --- !u!114 &6673571321931947652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fa86c75c71087489ac72aa6231157c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireResistance: 0
-  windResistance: 0
-  electricResistance: 0
+  fireResistance: -0.2
+  windResistance: -0.2
+  electricResistance: 0.5

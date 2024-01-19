@@ -98,8 +98,8 @@ MonoBehaviour:
   itemName: Thunderguard Aegis
   quantity: 1
   sprite: {fileID: 21300000, guid: 7f292a61420601d46ac7c3b269884180, type: 3}
-  itemDescription: An ancient artifact brimming with the power of electricity. (Functions
-    not yet implemented)
+  itemDescription: An ancient artifact brimming with the power of electricity. (Grants
+    the player the ability 'Thunder Punch'))
   itemType: 10
 --- !u!114 &3853693623222482212
 MonoBehaviour:
