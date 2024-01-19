@@ -34277,12 +34277,12 @@ MonoBehaviour:
   - To sprint, hold 'Left-Shift'. To jump, press 'Space'. To attack, press 'Left-Click'.
     Pressing 'Left-Click' multiple times does a chain of attacks.
   - You can also open inventory tab by pressing 'I' and equipment tab by pressing
-    'E'.
+    'P' or 'C'.
   - '''Double-click'' to Use/Equip an item and ''Right-Click'' to drop the item.'
   - In the bottom right of the screen, you can see your level, XP and HP. If you
     are wondering what the empty bar below HP is, that is MP bar and I'll that explain
     as we progress with the game.
-  - I have put a little spell so the knights in this map give weapon and armor equipments.
+  - I have put a little spell, so the knights in this map give weapon and armor equipments.
     Remember to equip them!
   - Oh, also! A little tip that I'd like to give you! The knights have an HP of 50
     and mushoom has an HP of 150 in this map. Will see you soon!
