@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5372511074104831773
 MonoBehaviour:
@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageTextPrefab: {fileID: 1406917009651349012, guid: fd57283a5bc0ddb40b79d8928169720d, type: 3}
   healthTextPrefab: {fileID: 1406917009651349012, guid: 824872e896badd3458f3e88d3c366c89, type: 3}
+  levelUpTextPrefab: {fileID: 0}
+  critDamageTextPrefab: {fileID: 0}
   gameCanvas: {fileID: 0}
+  openUI: 0
 --- !u!114 &94665599727522783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,19 +101,7 @@ MonoBehaviour:
     m_ActionId: 7fe344c2-5443-40ea-bcda-ea1e0adc12b5
     m_ActionName: Player/RangedAttack[/Keyboard/f,/Mouse/rightButton]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5372511074104831773}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnExitGame
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: e6f85a33-98f6-4f14-b189-cd6a8cecac04
     m_ActionName: UI/Escape[/Keyboard/escape]
   - m_PersistentCalls:
@@ -145,6 +136,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1f64cbd4-02e2-4c94-a164-976ec7e0919b
     m_ActionName: UI/Equipment[/Keyboard/p,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78b9dc9b-b06e-40f1-8fe5-c4692f241339
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03f5f7f0-ae09-4f10-87b8-c29c365fd7e1
+    m_ActionName: Player/MagicAttack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c43c76fe-8812-41df-a9a6-753a36ff53b2
+    m_ActionName: Player/SwitchToFireArtifact[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 47882aa7-6617-49c0-a896-485a24a03a75
+    m_ActionName: Player/SwitchToWindArtifact[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6e6bfc1-10f7-47e8-9614-68d0095648d8
+    m_ActionName: Player/SwitchToElectricArtifact[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
