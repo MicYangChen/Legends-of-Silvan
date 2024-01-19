@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 1927017781}
   - component: {fileID: 1927017782}
   - component: {fileID: 6365999098566044865}
+  - component: {fileID: 4974389918002957698}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -53,7 +54,7 @@ Transform:
   - {fileID: 765731811222025132}
   - {fileID: 8406228666687433764}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2223829362053832361
 SpriteRenderer:
@@ -661,6 +662,18 @@ MonoBehaviour:
   fireArtifactInUse: 0
   windArtifactInUse: 0
   electricArtifactInUse: 0
+--- !u!114 &4974389918002957698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199573235503205674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2312fd77c66374a8f15ad914abcf0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1218956459918036258
 GameObject:
   m_ObjectHideFlags: 0
