@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public int health, strength, defense;
-    public float critChance, ranged;
+    public float critChance, ranged, mpCost;
     public int currentExp, maxExp, currentLevel;
 
     [SerializeField] private TMP_Text levelText, healthText, attackText, strengthText, defenseText, critChanceText, rangedText;
 
-    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, critChancePreText, rangedPreText;
-    [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, critChanceNamePanel, rangedNamePanel;
+    [SerializeField] private TMP_Text healthPreText, strengthPreText, defensePreText, critChancePreText, rangedPreText, mpCostPreText;
+    [SerializeField] private GameObject healthNamePanel, strengthNamePanel, defenseNamePanel, critChanceNamePanel, rangedNamePanel, mpCostNamePanel;
 
     [SerializeField] private Image previewImage;
 
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         rangedText.text = (ranged * 100).ToString() + "%";
     }
 
-    public void PreviewEquipmentStats(int health, int strength, int defense, float critChance, float ranged, Sprite itemSprite)
+    public void PreviewEquipmentStats(int health, int strength, int defense, float critChance, float ranged, float mpCost, Sprite itemSprite)
     {
         if (health > 0)
         {
@@ -98,6 +98,17 @@ public class PlayerStats : MonoBehaviour
         {
             rangedPreText.text = "";
             rangedNamePanel.SetActive(false);
+        }
+
+        if (mpCost > 0)
+        {
+            mpCostPreText.text = (mpCost * 100).ToString() + "%";
+            mpCostNamePanel.SetActive(true);
+        }
+        else
+        {
+            mpCostPreText.text = "";
+            mpCostNamePanel.SetActive(false);
         }
 
         previewImage.sprite = itemSprite;

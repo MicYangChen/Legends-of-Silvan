@@ -12,14 +12,14 @@ public class EquipmentSO : ScriptableObject
     public int health, strength, defense;
 
     // Multipliers or Scaling
-    public float critChance, ranged;
+    public float critChance, ranged, mpCost;
 
     [SerializeField] private Sprite itemSprite;
 
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(health, strength, defense, critChance, ranged, itemSprite);
+            PreviewEquipmentStats(health, strength, defense, critChance, ranged, mpCost, itemSprite);
     }
 
     public void EquipItem()

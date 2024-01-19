@@ -18,4 +18,5 @@ MonoBehaviour:
   defense: 0
   critChance: 0
   ranged: 0
+  mpCost: 0.2
   itemSprite: {fileID: 21300000, guid: 006d579ba4d32b84c9e824dd4db2bdf2, type: 3}
