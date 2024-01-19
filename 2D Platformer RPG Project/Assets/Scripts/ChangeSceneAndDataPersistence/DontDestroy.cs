@@ -28,4 +28,18 @@ public class DontDestroy : MonoBehaviour
 
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
+
+    public static void DestroyPersistingObjects()
+    {
+        if (instances != null)
+        {
+            for (int i = 0; i < instances.Length; i++)
+            {
+                if (instances[i] != null)
+                {
+                    Destroy(instances[i].gameObject);
+                }
+            }
+        }
+    }
 }
