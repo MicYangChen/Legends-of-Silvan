@@ -509,8 +509,48 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c6e6bfc1-10f7-47e8-9614-68d0095648d8
     m_ActionName: Player/SwitchToElectricArtifact[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 401f2979-7af1-4ac6-bf18-30b8591d2af2
+    m_ActionName: UI/SwitchToElectricArtifact[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5496177e-1606-4bab-b4cf-4da20c7b2107
+    m_ActionName: UI/SwitchToWindArtifact[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26fdedb4-4e6e-407b-9c36-823228e8b895
+    m_ActionName: UI/SwitchToFireArtifact[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27a94cdf-511e-4913-ab4f-162dd6e73b42
+    m_ActionName: UI/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4917112b-5a32-4b91-a2ab-aadb57a0f871
+    m_ActionName: UI/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 849629ca-97c7-43d2-ae91-ec7242aa6af6
+    m_ActionName: UI/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9dc27fe4-4758-4bca-8920-500b3d1799e4
+    m_ActionName: UI/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8bd9ca1-8e2a-4738-a1c3-fce3180b7a9c
+    m_ActionName: UI/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce39bb17-1d6e-4be6-a314-c478ccf0204d
+    m_ActionName: UI/RangedAttack[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eb136b53-0ed7-4fe1-8662-f246d38abe17
+    m_ActionName: UI/MagicAttack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -674,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2312fd77c66374a8f15ad914abcf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 0}
 --- !u!1 &1218956459918036258
 GameObject:
   m_ObjectHideFlags: 0

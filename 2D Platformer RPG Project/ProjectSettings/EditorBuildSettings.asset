@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World Demo 1-5.unity
     guid: aa1a1da7572ce4f42871f8746147308a
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: be911ac9b5afdda438472d7578420f5e
   m_configObjects: {}

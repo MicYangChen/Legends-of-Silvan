@@ -29,12 +29,13 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && startDialogue && !isTyping)
+        if (startDialogue && !isTyping)
         {
             npcDialogue.text = "";
             if (npcPanel.activeInHierarchy)
             {
                 ResetText();
+                startDialogue = false;
             }
             else
             {
@@ -42,6 +43,7 @@ public class NPC : MonoBehaviour
                 npcNameText.text = npcName;
                 UpdateNPCImage();
                 StartCoroutine(Typing());
+                startDialogue = false;
             }
         }
 
